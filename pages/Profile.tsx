@@ -1,5 +1,4 @@
-import ProfilePage from "../components/pages/profilePage"
-
+import ProfilePage from "../components/pages/bioPage"
 
 const Profile = () => (
     <ProfilePage />
