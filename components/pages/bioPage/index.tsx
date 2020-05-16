@@ -1,3 +1,3 @@
-import ProfilePage from "./BioPage";
+import BioPage from "./BioPage";
 
-export default ProfilePage
+export default BioPage

@@ -5,7 +5,7 @@ import { MouseEvent, useRef, useState } from 'react'
 import { summary } from '../../../content/profile'
 
 const menu = [
-    {href: '/profile', title: 'Profile'},
+    {href: '/bio', title: 'Profile'},
     {href: '/portofolio', title: 'Portofolio'},
     {href: '/blog', title: 'Blog'}
 ]
