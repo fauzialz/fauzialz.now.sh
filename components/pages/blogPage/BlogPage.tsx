@@ -1,17 +1,15 @@
-import { Fragment } from "react";
-import Header from "../../molecules/header";
 import PageTemplate from "../../templates/pageTemplate/PageTemplate";
 import Head from "next/head";
 import { summary } from "../../../content/profile";
 
-const BioPage = () => (
+const BlogPage = () => (
     <PageTemplate>
         <Head>
-            <title>{summary.title} - {summary.first_name} {summary.last_name}</title>
+            <title>Blog - {summary.first_name} {summary.last_name}</title>
             <meta name="description" content={summary.about} />
         </Head>
-        Profile
+        Blog under construction!
     </PageTemplate>
 )
 
-export default BioPage
+export default BlogPage

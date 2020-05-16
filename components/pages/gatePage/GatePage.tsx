@@ -3,12 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { MouseEvent, useRef, useState } from 'react'
 import { summary } from '../../../content/profile'
-
-const menu = [
-    {href: '/bio', title: 'Profile'},
-    {href: '/portofolio', title: 'Portofolio'},
-    {href: '/blog', title: 'Blog'}
-]
+import { mainMenu } from '../../../content/router'
 
 interface Vector2D {
     x: number,
@@ -50,6 +45,7 @@ const GatePage = () => {
         <div className={styles.gate} onMouseMove={gateMouseTracker} ref={gate}>
             <Head>
                 <title>{summary.alias}</title>
+                <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content={description} />
             </Head>
             <div className={styles.gate__parallax}>
@@ -72,7 +68,7 @@ const GatePage = () => {
                                     Where do you want to go?
                                 </div>
                             </div>
-                            {menu.map(item => (
+                            {mainMenu.map(item => (
                                 <Link href={item.href} key={item.title}>
                                     <div className={styles.gate__menu__link}>
                                         <a>{item.title}</a>

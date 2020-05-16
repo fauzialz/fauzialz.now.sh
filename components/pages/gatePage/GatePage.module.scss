@@ -37,7 +37,6 @@ $dot-space: 26px;
         font-size: 34px;
         font-weight: bold;
         font-style: italic;
-        color: #2a2a2a;
         color: #363636;
         position: relative;
         transform: translate(-2px, -4px);
@@ -107,5 +106,9 @@ $dot-space: 26px;
     .gate__menu {
         flex-direction: column;
         padding-top: 20px;
+        &__link{
+            text-align: right;
+            margin-right: 0;
+        }
     }
 }

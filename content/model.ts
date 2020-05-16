@@ -49,3 +49,8 @@ export interface Experience extends StudyActivity {
     tech_stack?: string[]
     link?: string[]
 }
+
+export interface RouteObj {
+    href: string
+    title: string
+}

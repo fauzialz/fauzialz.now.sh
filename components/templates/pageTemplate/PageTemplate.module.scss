@@ -1,0 +1,9 @@
+@import '../../../style/sizing';
+
+.template {
+    &__wrapper {
+        padding-top: 20px;
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+}

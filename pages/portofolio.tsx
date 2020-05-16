@@ -1,7 +1,8 @@
-import GatePage from "../components/pages/gatePage";
+// import GatePage from "../components/pages/gatePage";
+import PortofolioPage from "../components/pages/portofolioPage";
 
 const Portofolio = () => (
-    <GatePage />
+    <PortofolioPage />
 )
 
 export default Portofolio
