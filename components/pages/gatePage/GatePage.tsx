@@ -6,7 +6,7 @@ import { summary } from '../../../content/profile'
 
 const menu = [
     {href: '/profile', title: 'Profile'},
-    {href: '/protofolio', title: 'Portofolio'},
+    {href: '/portofolio', title: 'Portofolio'},
     {href: '/blog', title: 'Blog'}
 ]
 
