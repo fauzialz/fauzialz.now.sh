@@ -9,7 +9,8 @@ $gap: 40px;
 
 .me {
     width: 100%;
-    margin: 30px 0;
+    margin: 100px 0;
+    margin-bottom: 130px;
     display: grid;
     grid-template-columns: [me0] 200px [me1] 1fr [me2];
     &__pict {
@@ -30,7 +31,8 @@ $gap: 40px;
         width: 60%;
     }
     &__box {
-        max-width: 700px;
+        line-height: 1.6;
+        max-width: 740px;
         margin-top: 20px;
         margin-left: 100px;
         margin-right: auto;
@@ -46,7 +48,7 @@ $gap: 40px;
             linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
             $dot-color;
         background-size: $dot-space $dot-space;
-        font-size: 13px;
+        font-size: 14px;
         color: $black;
         a { color: $blue; }
     }
@@ -57,6 +59,7 @@ $gap: 40px;
     
     .me {
         margin-top: -10px;
+        margin-bottom: 40px;
         &__pict img {
             height: 70px;
             border-radius: 50%;

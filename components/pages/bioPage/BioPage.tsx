@@ -2,6 +2,7 @@ import PageTemplate from "../../templates/pageTemplate";
 import Head from "next/head";
 import { summary } from "../../../content/profile";
 import AboutMe from "../../molecules/aboutMe";
+import Study from "../../molecules/study";
 
 const BioPage = () => (
     <PageTemplate>
@@ -10,6 +11,7 @@ const BioPage = () => (
             <meta name="description" content={summary.about} />
         </Head>
         <AboutMe />
+        <Study />
     </PageTemplate>
 )
 
