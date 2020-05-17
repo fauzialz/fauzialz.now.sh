@@ -87,9 +87,11 @@
         opacity: 0;
     }
     .header__icon {
+        img {display: none;}
         div {
             text-overflow: ellipsis;
             white-space: nowrap;
+            font-size: 18px;
         }
     }
 }

@@ -1,7 +1,7 @@
 @import '../../../style/color';
 
 $bg-color: #ffff;
-$dot-color: $blue;
+$dot-color: #00000046;
 
 $dot-size: 1px;
 $dot-space: 26px;
@@ -42,11 +42,11 @@ $gap: 40px;
         border-radius: 8px;
         background-color: $bg-color;
         background:
-            linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-            linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-            $dot-color;
+        linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+        linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+        $dot-color;
         background-size: $dot-space $dot-space;
-        font-size: 14px;
+        font-size: 13px;
         color: $black;
         a { color: $blue; }
     }
@@ -54,22 +54,25 @@ $gap: 40px;
 
 @media( max-width : 540px ) {
     .me {
-        grid-template-columns: [me0] 120px [me1] 1fr [me2];
-        margin-top: 10px;
+        margin-top: -10px;
         &__pict img {
-            height: 120px;
+            height: 70px;
+            border-radius: 50%;
+            grid-column: me0 / m02;
             position: relative;
         }
         &__slogan {
-            margin-left: $gap - 20px;
+            grid-column: me0 / m02;
             width: 100%;
-            padding-right: 20px;
-            font-size: 27px;
-            transform: translate(0px, -5px);
+            line-height: 1.1;
+            margin: 2px 0;
+            font-size: 38px;
+            text-shadow: -3px 3px $blue;
         }
         &__box {
             padding-left: 30px;
             margin-left: -30px;
+            padding-right: 20px;
         }
     }
 }

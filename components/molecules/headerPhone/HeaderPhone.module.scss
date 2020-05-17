@@ -3,7 +3,7 @@
 
 .bottom {
     display: none;
-    background-color: white;
+    background-color: $black;
     position: fixed;
     justify-content: space-between;
     width: 100%;
@@ -19,7 +19,7 @@
         padding: 0 20px;
         a{
             font-size: 14px;
-            color: $black-lighter;
+            color: #c8c8c8;
             padding: 3px 6px;
             border-radius: 5px;
         }
@@ -36,7 +36,7 @@
         }
     }
     .active {
-        a { color: $blue; }
+        a { color: white; }
         div {
             visibility: visible;
             opacity: 1;
