@@ -2,9 +2,13 @@ export interface Summary {
     alias: string
     first_name: string
     last_name: string
-    title: string
+    title_short: string
+    title_long: string
     born: Date
     about: string
+    slogan: string
+    city: string
+    country: string
 }
 
 export interface StudyActivity {

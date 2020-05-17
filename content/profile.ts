@@ -4,9 +4,13 @@ export const summary: Summary = {
     alias: 'fauzialz',
     first_name: 'Fauzi',
     last_name: 'Al Aziz',
-    title: 'Web Dev',
+    title_short: 'Web Dev',
+    title_long: 'self-taught designer and full stack code typist',
     born: new Date(2012, 10, 8),
-    about: 'A self driven person and a permanent learner. Start to learn web dev since 2018 and has made a number of things. Very obsessed about making something clean and aesthetic.'
+    slogan: 'Commit and push\nwas a life lessons I learn from Git.',
+    about: "I'm a self driven person and a permanent learner. Start to learn web dev since 2018 and has made a number of things. Very obsessed about making something clean and aesthetic.",
+    city: 'Jakarta',
+    country: 'Indonesia'
 }
 
 export const study: Study[] = [

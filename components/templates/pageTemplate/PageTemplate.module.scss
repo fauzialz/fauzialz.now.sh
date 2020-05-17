@@ -8,3 +8,6 @@
         padding-top: 22px;
     }
 }
+@media( max-width : 540px ) {
+    .template__wrapper { padding-bottom: $header_height;}
+}

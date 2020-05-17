@@ -1,0 +1,75 @@
+@import '../../../style/color';
+
+$bg-color: #ffff;
+$dot-color: $blue;
+
+$dot-size: 1px;
+$dot-space: 26px;
+$gap: 40px;
+
+.me {
+    width: 100%;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: [me0] 200px [me1] 1fr [me2];
+    &__pict {
+        position: relative;
+        img {
+            position: absolute;
+            height: 200px;
+            z-index: 2;
+        }
+    }
+    &__slogan {
+        margin-left: $gap;
+        font-size: 32px;
+        font-weight: bold;
+        color: $black;
+        letter-spacing: -.020em;
+        line-height: 1.2;
+        width: 60%;
+    }
+    &__box {
+        max-width: 740px;
+        margin-top: 20px;
+        margin-left: 100px;
+        margin-right: auto;
+        grid-column: me0 / m02;
+        padding: 30px;
+        padding-left: 100px + $gap;
+        padding-bottom: 50px;
+        border: 1px solid #00000010;
+        border-radius: 8px;
+        background-color: $bg-color;
+        background:
+            linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+            linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+            $dot-color;
+        background-size: $dot-space $dot-space;
+        font-size: 14px;
+        color: $black;
+        a { color: $blue; }
+    }
+}
+
+@media( max-width : 540px ) {
+    .me {
+        grid-template-columns: [me0] 120px [me1] 1fr [me2];
+        margin-top: 10px;
+        &__pict img {
+            height: 120px;
+            position: relative;
+        }
+        &__slogan {
+            margin-left: $gap - 20px;
+            width: 100%;
+            padding-right: 20px;
+            font-size: 27px;
+            transform: translate(0px, -5px);
+        }
+        &__box {
+            padding-left: 30px;
+            margin-left: -30px;
+        }
+    }
+}
