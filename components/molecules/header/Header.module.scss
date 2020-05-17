@@ -1,8 +1,6 @@
 @import '../../../style/color';
 @import '../../../style/sizing';
 
-$header_height : 60px;
-
 .header {
     position: relative;
     height: $header_height;
@@ -10,11 +8,12 @@ $header_height : 60px;
     &__bar {
         width: 100%;
         height: $header_height;
-        background-color: $blue-lighter;
+        background-color: white;
         position: fixed;
-        box-shadow: rgba(0, 0, 0, 0.609) 0px 1px 1px -1px ;
+        // box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 1px -1px ;
         &__wrapper {
             max-width: $max-width;
+            padding: 0 $max-padding;
             margin: 0 auto;
             height: 100%;
             display: flex;
@@ -28,8 +27,18 @@ $header_height : 60px;
         align-items: center;
         img {
             transition: all .2s ease;
-            height: 22px;
+            height: 24px;
+            transform: translate(-5px);
         }
+        div {
+            transition: all .2s ease;
+            font-weight: bold;
+            color: $black;
+            font-size: 24px;
+            letter-spacing: -.016em;
+            transform: translate(-1px, -2px);
+        }
+        &:hover div { color: $blue; }
     }
     &__menu {
         display: flex;
@@ -38,7 +47,7 @@ $header_height : 60px;
             height: 100%;
             display: flex;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 20px;
             position: relative;
             &:last-child {margin-right: 0;}
             a{
@@ -53,19 +62,34 @@ $header_height : 60px;
                 height: 2px;
                 z-index: -1;
                 bottom: 0;
+                left: 0;
                 visibility: hidden;
                 opacity: 0;
                 background-color: $black;
             }
+            &:hover a { color: $blue; }
         }
         .active {
-            a {
-                color: black;
-            }
+            a { color: black; }
             div {
                 visibility: visible;
                 opacity: 1;
             }
+            &:hover a { color: $blue; }
+        }
+    }
+}
+
+@media( max-width : 480px ) {
+    .header__bar {position: absolute;}
+    .header__menu {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .header__icon {
+        div {
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     }
 }

@@ -1,4 +1,4 @@
-import PageTemplate from "../../templates/pageTemplate/PageTemplate";
+import PageTemplate from "../../templates/pageTemplate";
 import Head from "next/head";
 import { summary } from "../../../content/profile";
 

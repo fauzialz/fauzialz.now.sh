@@ -2,8 +2,9 @@
 
 .template {
     &__wrapper {
-        padding-top: 20px;
         max-width: $max-width;
         margin: 0 auto;
+        padding: 0 $max-padding;
+        padding-top: 22px;
     }
 }

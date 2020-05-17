@@ -2,6 +2,8 @@ import styles from './Header.module.scss'
 import { mainMenu } from '../../../content/router'
 import Link from 'next/link'
 import NavLink from '../../atoms/navLink'
+import { summary } from '../../../content/profile'
+import HeaderPhone from '../headerPhone'
 
 const Header = () => (
     <div className={styles.header}>
@@ -10,6 +12,9 @@ const Header = () => (
                 <Link href="/">
                     <div className={styles.header__icon}>
                         <img src="/logo.png" alt="fauzialz logo" />
+                        <div>
+                            {summary.first_name} {summary.last_name}
+                        </div>
                     </div>
                 </Link>
             
@@ -28,6 +33,8 @@ const Header = () => (
                 </div>
             </div>
         </nav>
+
+        <HeaderPhone />
     </div>
 )
 

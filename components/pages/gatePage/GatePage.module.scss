@@ -1,6 +1,8 @@
-$bg-color: #f8fbff;
+@import '../../../style/color';
+
+$bg-color: #ffff;
 // $bg-color: hsl(256,33,10);
-$dot-color: #0168ee;
+$dot-color: $blue;
 
 $dot-size: 1px;
 $dot-space: 26px;
@@ -43,7 +45,7 @@ $dot-space: 26px;
         text-align: center;
         &__shadow {
             transition: all .1s ease-out;
-            color: #2a8aff;
+            color: $blue;
             position: absolute;
             top: 0;
             z-index: -1;
@@ -53,15 +55,15 @@ $dot-space: 26px;
     &__description {
         text-align: center;
         font-size: 15px;
-        color: #363636;
-        margin-top: 6px;
+        color: $black;
+        margin-top: 10px;
     }
     &__menu {
         margin-top: 60px;
         position: relative;
         padding: 20px;
-        padding-top: 22px;
-        border: 1px solid #9e9e9e;
+        padding-top: 21px;
+        border: 1px solid #00000020;
         border-radius: 8px;
         max-width: 800px;
         display: flex;
@@ -93,7 +95,7 @@ $dot-space: 26px;
             }
             a {
                 text-decoration: none;
-                color: #0073ff;
+                color: $blue-font;
             }
             &:hover {
                 background-color: #00000010;
@@ -104,11 +106,6 @@ $dot-space: 26px;
 
 @media( max-width : 480px ) {
     .gate__menu {
-        flex-direction: column;
-        padding-top: 20px;
-        &__link{
-            text-align: right;
-            margin-right: 0;
-        }
+        display: none;
     }
 }

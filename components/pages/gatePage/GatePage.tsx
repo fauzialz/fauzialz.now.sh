@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { MouseEvent, useRef, useState } from 'react'
 import { summary } from '../../../content/profile'
 import { mainMenu } from '../../../content/router'
+import HeaderPhone from '../../molecules/headerPhone'
 
 interface Vector2D {
     x: number,
@@ -51,6 +52,7 @@ const GatePage = () => {
             <div className={styles.gate__parallax}>
                 <div className={styles.gate__parallax__box} onMouseOver={() => setParallax(true)}>
                     <div>
+
                         <div className={styles.gate__username}>
                             {summary.alias}
                             <div className={styles.gate__username__shadow}
@@ -59,9 +61,11 @@ const GatePage = () => {
                                 {summary.alias}
                             </div>
                         </div>
+
                         <div className={styles.gate__description}>
                             {description}
                         </div>
+
                         <div className={styles.gate__menu}>
                             <div className={styles.gate__menu__title}>
                                 <div>
@@ -79,6 +83,8 @@ const GatePage = () => {
                     </div>
                 </div>
             </div>
+
+            <HeaderPhone />
         </div>
     )
 }

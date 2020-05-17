@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Header from "../../molecules/header";
-import PageTemplate from "../../templates/pageTemplate/PageTemplate";
+import PageTemplate from "../../templates/pageTemplate";
 import Head from "next/head";
 import { summary } from "../../../content/profile";
 
