@@ -5,10 +5,10 @@ export const summary: Summary = {
     first_name: 'Fauzi',
     last_name: 'Al Aziz',
     title_short: 'Web Dev',
-    title_long: 'self-taught designer and full stack code typist',
+    title_long: 'self-taught designer and full-stack code typist',
     born: new Date(2012, 10, 8),
     slogan: 'Commit and push\nwas a life lessons I learn from Git.',
-    about: "I'm a self driven person and a permanent learner. Start to learn web dev since 2018 and has made a number of things. Very obsessed about making something clean and aesthetic.",
+    about: "I start to learn web dev since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
     city: 'Jakarta',
     country: 'Indonesia'
 }

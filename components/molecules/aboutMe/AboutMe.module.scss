@@ -1,7 +1,7 @@
 @import '../../../style/color';
 
 $bg-color: #ffff;
-$dot-color: #00000046;
+$dot-color: $blue;
 
 $dot-size: 1px;
 $dot-space: 26px;
@@ -30,7 +30,7 @@ $gap: 40px;
         width: 60%;
     }
     &__box {
-        max-width: 740px;
+        max-width: 700px;
         margin-top: 20px;
         margin-left: 100px;
         margin-right: auto;
@@ -42,9 +42,9 @@ $gap: 40px;
         border-radius: 8px;
         background-color: $bg-color;
         background:
-        linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-        linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-        $dot-color;
+            linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+            linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+            $dot-color;
         background-size: $dot-space $dot-space;
         font-size: 13px;
         color: $black;
@@ -53,6 +53,8 @@ $gap: 40px;
 }
 
 @media( max-width : 540px ) {
+    $dot-color: #00000046;
+    
     .me {
         margin-top: -10px;
         &__pict img {
@@ -73,6 +75,12 @@ $gap: 40px;
             padding-left: 30px;
             margin-left: -30px;
             padding-right: 20px;
+            background-color: $bg-color;
+            background:
+                linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+                linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+                $dot-color;
+            background-size: $dot-space $dot-space;
         }
     }
 }

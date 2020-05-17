@@ -14,7 +14,7 @@ const AboutMe = () => (
             I'm a {summary.title_long} based on {summary.city}, {summary.country}.
             <br /><br />
 
-            {summary.about}
+            {summary.about} From web dev side, I'm comfortable with TypeScript, React, Redux, Next.Js, Node.js, SASS, MySQL, PostgreSQL, and Firebase.
             <br /><br />
 
             {/* From web development side, I'm comfortable with React, Redux, Next.Js, Node.js, SASS, MySQL, PostgreSQL, and Firebase.
