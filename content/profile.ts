@@ -16,34 +16,42 @@ export const summary: Summary = {
 export const study: Study[] = [
     {
         level: 0,
+        detailed: false,
         school_name: 'MIN 13 Muktisari',
         city: 'Ciamis',
         start: new Date(),
         end: new Date(),
+        route: '/min',
         summary: 'The school was MI PUI Cigebot back there.'
     },
     {
         level: 1,
+        detailed: false,
         school_name: 'MTsN 4 Ciamis',
         city: 'Ciamis',
         start: new Date(),
         end: new Date(2011, 1),
+        route: '/mtsn',
         summary: 'The school was MTsN Buniseuri back there.'
     },
     {
         level: 2,
+        detailed: false,
         school_name: 'SMA Informatika Ciamis',
         city: 'Ciamis',
         start: new Date(2011, 1),
         end: new Date(2014, 6), // Juli 2014
+        route: '/sma',
         summary: 'Regular high school with the addition of a computer science curriculum. In this period of time, I learn to design more than programming'
     },
     {
         level: 3,
+        detailed: true,
         school_name: 'Telkom University',
         faculty: 'Faculty of Informatics',
         major: 'Computational Science',
         degree: {
+            level: "Bachelor's",
             short: 'S.Si.Kom.',
             long: 'Sarjana Sains Komputer'
         },
@@ -51,6 +59,7 @@ export const study: Study[] = [
         city: 'Bandung',
         start: new Date(2014, 7),
         end: new Date(2018, 7),
+        route: '/bachelor',
         summary: 'Not writed yet',
         activities: [
             {
