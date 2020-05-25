@@ -7,7 +7,7 @@ const PortofolioPage = () => (
         <Head>
             <title>Portofolio - {summary.first_name} {summary.last_name}</title>
         </Head>
-        Portofolio
+        Portofolio is under construction!
     </PageTemplate>
 )
 

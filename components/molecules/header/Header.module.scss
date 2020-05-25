@@ -10,6 +10,7 @@
         height: $header_height;
         background-color: white;
         position: fixed;
+        z-index: 100;
         // box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 1px -1px ;
         &__wrapper {
             max-width: $max-width;

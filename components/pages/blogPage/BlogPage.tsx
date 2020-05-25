@@ -8,7 +8,7 @@ const BlogPage = () => (
             <title>Blog - {summary.first_name} {summary.last_name}</title>
             <meta name="description" content={summary.about} />
         </Head>
-        Blog under construction!
+        Blog is under construction!
     </PageTemplate>
 )
 

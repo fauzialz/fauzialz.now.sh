@@ -8,7 +8,7 @@ export const summary: Summary = {
     title_long: 'self-taught designer and full-stack code typist',
     born: new Date(2012, 10, 8),
     slogan: 'Commit and push\nwas a life lessons I learn from Git.',
-    about: "I start to learn web dev since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
+    about: "I started learning web dev since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
     city: 'Jakarta',
     country: 'Indonesia'
 }
@@ -16,34 +16,42 @@ export const summary: Summary = {
 export const study: Study[] = [
     {
         level: 0,
+        detailed: false,
         school_name: 'MIN 13 Muktisari',
         city: 'Ciamis',
         start: new Date(),
         end: new Date(),
+        route: '/min',
         summary: 'The school was MI PUI Cigebot back there.'
     },
     {
         level: 1,
+        detailed: false,
         school_name: 'MTsN 4 Ciamis',
         city: 'Ciamis',
         start: new Date(),
         end: new Date(2011, 1),
+        route: '/mtsn',
         summary: 'The school was MTsN Buniseuri back there.'
     },
     {
         level: 2,
+        detailed: false,
         school_name: 'SMA Informatika Ciamis',
         city: 'Ciamis',
         start: new Date(2011, 1),
         end: new Date(2014, 6), // Juli 2014
+        route: '/sma',
         summary: 'Regular high school with the addition of a computer science curriculum. In this period of time, I learn to design more than programming'
     },
     {
         level: 3,
+        detailed: true,
         school_name: 'Telkom University',
         faculty: 'Faculty of Informatics',
         major: 'Computational Science',
         degree: {
+            level: "Bachelor's",
             short: 'S.Si.Kom.',
             long: 'Sarjana Sains Komputer'
         },
@@ -51,6 +59,7 @@ export const study: Study[] = [
         city: 'Bandung',
         start: new Date(2014, 7),
         end: new Date(2018, 7),
+        route: '/bachelor',
         summary: 'Not writed yet',
         activities: [
             {
@@ -119,6 +128,7 @@ export const study: Study[] = [
 
 export const experience: Experience[] = [
     {
+        id: 'xsis',
         name: 'PT Xsis Mitra Utama',
         as: 'Software Engineer',
         start: new Date(2018, 8),
@@ -129,12 +139,14 @@ export const experience: Experience[] = [
         description: 'PT Xsis Mitra Utama is a vendor company base on IT solutions for industries. Providing skilled resources in programming.\n\nAs an employee of this company, I have been trained to mastering JavaScript programming language both in client side (frontend) and server side (backend). So basically I am a fullstuck programmer. My skill-set including Node.Js, React.Js, Angular, and Vue.Js. In the idle time, I keep learning to elevate my knowledge and mastering my craft.'
     },
     {
+        id: 'mapan',
         name: 'Mapan - PT RUMA',
         as: 'Application Support Engineer',
         start: new Date(2018, 11),
         important: true,
         type: 'period',
         location: 'Jakarta',
+        disclaimer: 'Work under PT. Xsis Mitra Utama',
         description: 'Mapan is an Indonesia-based company that focuses on providing network of thousands of lower income communities with better access to valuable products and services using technology. Our main product right now is Arisan.\n\nIn this company, I work under PT. Xsis Mitra Utama and placed in Supply Chain Team under Tech Division. What I do as a Support Engineer are:',
         jobDesc: [
             {

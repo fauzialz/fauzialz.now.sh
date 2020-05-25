@@ -23,10 +23,12 @@ export interface StudyActivity {
 
 export interface Study {
     level: number
+    detailed: boolean
     school_name: string
     faculty?: string
     major?: string
     degree?: {
+        level: 'Associate ' | "Bachelor's" | "Master's" | 'Doctoral'
         short: string,
         long: string
     }
@@ -36,6 +38,7 @@ export interface Study {
     start: Date
     end: Date
     summary: string
+    route: string
     activities?: StudyActivity[]
 }
 
@@ -49,9 +52,11 @@ export interface ExperienceJobDesc {
 
 export interface Experience extends StudyActivity {
     location: string,
+    id: string,
     jobDesc?: ExperienceJobDesc[]
     tech_stack?: string[]
     link?: string[]
+    disclaimer?: string
 }
 
 export interface RouteObj {

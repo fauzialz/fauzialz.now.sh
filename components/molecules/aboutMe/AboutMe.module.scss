@@ -9,7 +9,7 @@ $gap: 40px;
 
 .me {
     width: 100%;
-    margin: 100px 0;
+    margin: 80px 0;
     margin-bottom: 130px;
     display: grid;
     grid-template-columns: [me0] 200px [me1] 1fr [me2];
@@ -65,6 +65,7 @@ $gap: 40px;
             border-radius: 50%;
             grid-column: me0 / m02;
             position: relative;
+            margin-bottom: 6px;
         }
         &__slogan {
             grid-column: me0 / m02;

@@ -1,0 +1,61 @@
+@import '../../../style/color';
+
+.frame {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 18px;
+    border: 1px solid #e0e0e0;
+    padding: 14px 16px;
+    padding-bottom: 16px;
+    transition: all .3s ease;
+    border-radius: 10px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    &:hover {
+        border-color: $blue;
+        box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 4px -1px ;
+    }
+    a {
+        color: $black-lighter;
+        text-decoration: none;
+    }
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+.company {
+    font-size: 14px;
+    margin-top: 6px;
+}
+.date {
+    font-size: 14px;
+    margin-top: 6px;
+    span {
+        color: #00000085;
+        &::before {
+            content: "\00B7";
+            margin: 0 5px;
+        }
+    }
+}
+.disclaimer {
+    margin-top: 13px;
+    margin-bottom: 2px;
+    span {
+        font-size: 13px;
+        padding: 4px 8px;
+        background-color: #ff000018;
+        border-radius: 5px;
+        color: #d40000;
+    }
+}
+
+@media( max-width : 540px ) {
+    .frame {
+        padding: 14px 12px;
+        margin-bottom: 18px;
+    }
+}
