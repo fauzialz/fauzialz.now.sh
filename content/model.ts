@@ -52,9 +52,11 @@ export interface ExperienceJobDesc {
 
 export interface Experience extends StudyActivity {
     location: string,
+    id: string,
     jobDesc?: ExperienceJobDesc[]
     tech_stack?: string[]
     link?: string[]
+    disclaimer?: string
 }
 
 export interface RouteObj {

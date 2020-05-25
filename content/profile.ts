@@ -8,7 +8,7 @@ export const summary: Summary = {
     title_long: 'self-taught designer and full-stack code typist',
     born: new Date(2012, 10, 8),
     slogan: 'Commit and push\nwas a life lessons I learn from Git.',
-    about: "I start to learn web dev since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
+    about: "I started learning web dev since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
     city: 'Jakarta',
     country: 'Indonesia'
 }
@@ -128,6 +128,7 @@ export const study: Study[] = [
 
 export const experience: Experience[] = [
     {
+        id: 'xsis',
         name: 'PT Xsis Mitra Utama',
         as: 'Software Engineer',
         start: new Date(2018, 8),
@@ -138,12 +139,14 @@ export const experience: Experience[] = [
         description: 'PT Xsis Mitra Utama is a vendor company base on IT solutions for industries. Providing skilled resources in programming.\n\nAs an employee of this company, I have been trained to mastering JavaScript programming language both in client side (frontend) and server side (backend). So basically I am a fullstuck programmer. My skill-set including Node.Js, React.Js, Angular, and Vue.Js. In the idle time, I keep learning to elevate my knowledge and mastering my craft.'
     },
     {
+        id: 'mapan',
         name: 'Mapan - PT RUMA',
         as: 'Application Support Engineer',
         start: new Date(2018, 11),
         important: true,
         type: 'period',
         location: 'Jakarta',
+        disclaimer: 'Work under PT. Xsis Mitra Utama',
         description: 'Mapan is an Indonesia-based company that focuses on providing network of thousands of lower income communities with better access to valuable products and services using technology. Our main product right now is Arisan.\n\nIn this company, I work under PT. Xsis Mitra Utama and placed in Supply Chain Team under Tech Division. What I do as a Support Engineer are:',
         jobDesc: [
             {

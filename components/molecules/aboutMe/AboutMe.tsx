@@ -11,7 +11,7 @@ const AboutMe = () => (
         </div>
         <div className={styles.me__box}>
             Hi! My name is {summary.first_name} {summary.last_name}.
-            I'm a {summary.title_long} based on {summary.city}, {summary.country}.
+            I'm a {summary.title_long} based in {summary.city}, {summary.country}.
             <br /><br />
 
             {summary.about} From web dev side, I'm comfortable with TypeScript, React, Redux, Next.Js, Node.js, SASS, MySQL, PostgreSQL, and Firebase.

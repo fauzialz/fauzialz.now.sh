@@ -5,3 +5,13 @@ export const mainMenu: RouteObj[] = [
     {href: '/portofolio', title: 'Portofolio'},
     {href: '/blog', title: 'Blog'}
 ]
+
+interface SubMenu {
+    edu: RouteObj
+    exp: RouteObj
+}
+
+export const subMenu: SubMenu = {
+    edu: {href: '/studies', title: 'Studies'},
+    exp: {href: '/experiences', title: 'Experiences'},
+}

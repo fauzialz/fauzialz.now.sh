@@ -3,6 +3,7 @@ import Head from "next/head";
 import { summary } from "../../../content/profile";
 import AboutMe from "../../molecules/aboutMe";
 import Study from "../../molecules/study";
+import Experiences from "../../molecules/experiences";
 
 const BioPage = () => (
     <PageTemplate>
@@ -12,6 +13,7 @@ const BioPage = () => (
         </Head>
         <AboutMe />
         <Study />
+        <Experiences />
     </PageTemplate>
 )
 
