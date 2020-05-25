@@ -50,6 +50,7 @@ $gap: 40px;
         background-size: $dot-space $dot-space;
         font-size: 14px;
         color: $black;
+        white-space: pre-line;
         a { color: $blue; }
     }
 }

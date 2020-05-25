@@ -148,6 +148,7 @@ export const experience: Experience[] = [
         location: 'Jakarta',
         disclaimer: 'Work under PT. Xsis Mitra Utama',
         description: 'Mapan is an Indonesia-based company that focuses on providing network of thousands of lower income communities with better access to valuable products and services using technology. Our main product right now is Arisan.\n\nIn this company, I work under PT. Xsis Mitra Utama and placed in Supply Chain Team under Tech Division. What I do as a Support Engineer are:',
+        companySite:'https://www.mapan.id/',
         jobDesc: [
             {
                 title: 'Daily Ticketing',
@@ -187,3 +188,5 @@ export const experience: Experience[] = [
         ]
     }
 ] 
+
+export const sortedExp = experience.sort((a, b) => ((b.start.getFullYear() + b.start.getMonth()) - (a.start.getFullYear() + a.start.getMonth())))

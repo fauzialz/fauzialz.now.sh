@@ -1,10 +1,10 @@
 import styles from './Experiences.module.scss'
 import BioSection from '../../templates/bioSection'
-import { experience } from '../../../content/profile'
+import { sortedExp } from '../../../content/profile'
 import JobCard from '../../atoms/jobCard'
+import { subMenu } from '../../../content/router'
 
 const expDetail = 'In case you want to see my formal work experience record, the simplified list are shown.'
-const jobs = experience.sort((a, b) => ((b.start.getFullYear() + b.start.getMonth()) - (a.start.getFullYear() + a.start.getMonth())))
 
 const Experiences = () => (
     <section id="experiences">
@@ -12,10 +12,10 @@ const Experiences = () => (
             title="Formal Work Experiences"
             detail={expDetail}
             seeDetail="See full work experiences"
-            seeDetailHref="/experiences"
+            seeDetailHref={subMenu.exp.href}
         >
             <div className={styles.feeds}>
-                {jobs.map(exp => (
+                {sortedExp.map(exp => (
                     <JobCard key={exp.name} job={exp} />
                 ))}
             </div>
