@@ -3,6 +3,7 @@ import { Study } from '../../../content/model'
 import cn from 'classnames'
 import Link from 'next/link'
 import { Fragment } from 'react'
+import { subMenu } from '../../../content/router'
 
 export interface StudyCardProps {
     school: Study
@@ -26,8 +27,8 @@ const StudyCard = ({school}: StudyCardProps) => {
 
     let StudyCardContent = () => {
         if(detailed) return (
-            <Link href={'/study' + school.route}>
-                <a href={'/study' + school.route}><StudyCardDefault school={school} /></a>
+            <Link href={subMenu.edu.href + school.route}>
+                <a href={subMenu.edu.href + school.route}><StudyCardDefault school={school} /></a>
             </Link>
         )
         return <StudyCardDefault school={school} />

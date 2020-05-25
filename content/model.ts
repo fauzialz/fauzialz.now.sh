@@ -56,6 +56,7 @@ export interface Experience extends StudyActivity {
     jobDesc?: ExperienceJobDesc[]
     tech_stack?: string[]
     link?: string[]
+    companySite? : string
     disclaimer?: string
 }
 

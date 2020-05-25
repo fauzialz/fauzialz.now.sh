@@ -1,60 +1,31 @@
 @import '../../../style/color';
 
-.study {
-    margin: 80px 0;
-    h1 { color: $black}
-    .flex { display: flex; justify-content: space-between;}
-
-    &__intro {
-        font-size: 14px;
-        width: 400px;
-        line-height: 1.6;
-        color: $black;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 10px;
-        justify-content: space-between;
-        padding-right: 10px;
-        a {color: $blue;}
+.timeline {
+    .line {
+        width: 100%;
+        height: 20px;
+        border-top: 1px solid #efefef;
     }
-    &__timeline {
-        width: 500px;
-        padding-bottom: 10px;
-        &__line {
-            width: 100%;
-            height: 20px;
+    
+    .study_list {
+        display: flex;
+        width: 100%;
+        .study_blank {
+            padding-right: 10px;
+            width: 30px;
             border-top: 1px solid #efefef;
-        }
-        
-        .study_list {
-            display: flex;
-            width: 100%;
-            .study_blank {
-                padding-right: 10px;
-                width: 30px;
-                border-top: 1px solid #efefef;
-                border-right: 1px solid #efefef;
-                border-bottom: 1px solid #efefef;
-                border-radius: 0 10px 10px 0;
-            }
+            border-right: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+            border-radius: 0 10px 10px 0;
         }
     }
 }
 
 @media( max-width : 540px ) {
-    .study {
-        margin: 40px 0;
-        .flex { flex-direction: column; }
-        &__intro, &__timeline { width: 100%; }
-        &__timeline {
-            margin-top: 30px;
-            transform: translate(-20px);
-            width: calc(100% + 40px);
-            padding-right: 0;
-            .study_list {
-                padding-right: 20px;
-                .study_blank {padding: 0;}
-            }
+    .timeline {
+        .study_list {
+            padding-right: 20px;
+            .study_blank {padding: 0;}
         }
     }
 }
