@@ -8,11 +8,6 @@ import { mdiPostOutline } from '@mdi/js'
 import { mdiBriefcaseVariantOutline } from '@mdi/js'
 import { mdiAccountOutline } from '@mdi/js'
 
-const menu: RouteObj[] = [{
-    href: '/',
-    title: 'Home'
-}, ...mainMenu.reverse()]
-
 const icon = [
     mdiHomeOutline,
     mdiPostOutline,
@@ -20,23 +15,33 @@ const icon = [
     mdiAccountOutline
 ]
 
-const HeaderPhone = () => (
-    <div className={styles.bottom}>
-        {menu.map((item, i) => (
-            <NavLink
-                key={item.href}
-                href={item.href}
-                className={styles.bottom__link}
-                activeClass={styles.active}
-            >
-                <a>
-                    <Icon path={icon[i]} />
-                    {item.title}
-                </a>
-                {/* <div /> */}
-            </NavLink>
-        ))}
-    </div>
-)
+const HeaderPhone = () => {
+
+    let menuReversed = [...mainMenu]
+
+    let menu: RouteObj[] = [{
+        href: '/',
+        title: 'Home'
+    }, ...menuReversed.reverse()]
+
+    return(
+        <div className={styles.bottom}>
+            {menu.map((item, i) => (
+                <NavLink
+                    key={item.href}
+                    href={item.href}
+                    className={styles.bottom__link}
+                    activeClass={styles.active}
+                >
+                    <a>
+                        <Icon path={icon[i]} />
+                        {item.title}
+                    </a>
+                    {/* <div /> */}
+                </NavLink>
+            ))}
+        </div>
+    )
+}
 
 export default HeaderPhone

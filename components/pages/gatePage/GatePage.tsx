@@ -28,6 +28,7 @@ const calcScale = (distance: number) => {
 const GatePage = () => {
     const gate = useRef<HTMLDivElement>(null)
     const [coordinates, setCoordinates] = useState({x: -3, y: 3, s: 1})
+    const [mouse, setMouse] = useState({x: 0, y: 0})
     const [parallax, setParallax] = useState(false)
     const description = `Personal site of ${summary.first_name} ${summary.last_name}`
 
@@ -40,6 +41,7 @@ const GatePage = () => {
         let distance = vectorDistance({x: 0, y: 0}, {x:x, y:y})
         let s = calcScale(distance)
         setCoordinates({x: x, y: y, s: s})
+        setMouse({x: e.clientX, y: e.clientY})
     }
 
     return (
@@ -49,6 +51,12 @@ const GatePage = () => {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content={description} />
             </Head>
+            <div className={styles.light}
+                style={{
+                    top: `${mouse.y}px`,
+                    left: `${mouse.x}px`
+                }}
+            />
             <div className={styles.gate__parallax}>
                 <div className={styles.gate__parallax__box} onMouseOver={() => setParallax(true)}>
                     <div>
