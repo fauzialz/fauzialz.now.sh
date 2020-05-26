@@ -54,7 +54,9 @@ const GatePage = () => {
             <div className={styles.light}
                 style={{
                     top: `${mouse.y}px`,
-                    left: `${mouse.x}px`
+                    left: `${mouse.x}px`,
+                    display: mouse.x > gate.current.offsetWidth - 70 || mouse.y > gate.current.offsetHeight - 70?
+                        'none' : 'flex'
                 }}
             />
             <div className={styles.gate__parallax}>

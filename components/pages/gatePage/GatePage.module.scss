@@ -9,12 +9,12 @@ $dot-size: 1px;
 $dot-space: 26px;
 
 .light {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
-    background: radial-gradient(circle, #fffded 0%, transparent 70%);
+    background: radial-gradient(circle, #fdfcf4 0%, transparent 70%);
     transform: translate(-50%, -50%);
 }
 
