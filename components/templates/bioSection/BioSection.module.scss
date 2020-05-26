@@ -1,8 +1,13 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
 
 .frame {
     margin: 80px 0;
-    h1 { color: $black}
+    // border-left: 1px solid #00000010;
+    h1 { 
+        color: $black;
+        font-size: 36px;
+    }
 }
 
 .flex {
@@ -11,7 +16,6 @@
 }
 
 .detail {
-    font-size: 14px;
     width: 400px;
     line-height: 1.6;
     color: $black;
@@ -24,11 +28,20 @@
 }
 
 .feeds {
-    width: 500px;
+    width: 580px;
     padding-bottom: 10px;
 }
 
-@media( max-width : 540px ) {
+@media( max-width : $media-medium ) {
+    .frame {
+        h1 { font-size: 28px; }
+    }
+    .feeds {
+        width: 500px;
+    }
+}
+
+@media( max-width : $media-phone + 160px ) {
     .frame {
         margin: 40px 0;
     }

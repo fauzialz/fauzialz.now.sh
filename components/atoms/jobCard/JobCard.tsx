@@ -37,6 +37,7 @@ const JobCard = ({job}: JobCardProps) => (
             <div className={styles.disclaimer}>
                 <span>{job.disclaimer}</span>
             </div>}
+            <div className={styles.icon} />
         </a></Link>
     </div>
 )

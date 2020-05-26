@@ -19,6 +19,8 @@ const StudyCardDefault = ({school}: StudyCardProps) => (
         <div className={styles.dot_socket}>
             <div className={styles.dot} />
         </div>
+        {/* <img src="/int-link.svg" alt="Internal Link" className={styles.icon} /> */}
+        <div className={styles.icon} />
     </Fragment>
 )
 

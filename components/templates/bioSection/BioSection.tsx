@@ -1,6 +1,6 @@
 import styles from './BioSection.module.scss'
-import Link from 'next/link'
 import { ReactNode } from 'react'
+import InternalLink from '../../atoms/internalLink'
 
 interface BioSectionProps {
     children: ReactNode
@@ -16,9 +16,9 @@ const BioSection = ({children, title, detail, seeDetail, seeDetailHref}: BioSect
         <div className={styles.flex}>
             <div className={styles.detail}>
                 {detail}
-                <Link href={seeDetailHref}>
-                    <a>{seeDetail}</a>
-                </Link>
+                <InternalLink href={seeDetailHref}>
+                    {seeDetail}
+                </InternalLink>
             </div>
             <div className={styles.feeds}>
                 {children}

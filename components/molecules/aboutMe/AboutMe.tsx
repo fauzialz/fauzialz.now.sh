@@ -1,6 +1,7 @@
 import styles from './AboutMe.module.scss'
 import { summary, sortedExp } from '../../../content/profile'
 import { monthNames, firstIsVowel } from '../../../content/const'
+import ExternalLink from '../../atoms/externalLink'
 
 const currentJob = sortedExp[0]
 const anOrA = (word: string) => firstIsVowel(word)? 'an' : 'a'
@@ -26,7 +27,7 @@ const AboutMe = () => (
             <b>What I do now?</b><br /><br />
             Formally, I'm {anOrA(currentJob.as)}
             {` ${currentJob.as} `}
-            at {currentJob.companySite? <a href={currentJob.companySite} target="blank">{currentJob.name}</a> : ` ${currentJob.name}`}
+            at {currentJob.companySite? <ExternalLink href={currentJob.companySite}>{currentJob.name}</ExternalLink> : ` ${currentJob.name}`}
             {` since`} {`${monthNames[currentJob.start.getMonth()]} ${currentJob.start.getFullYear()}`}. In spare time, I do side projects and learn more thing about programming, especially on the field of Front-end Engineering.
         </div>
     </section>

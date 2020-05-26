@@ -1,20 +1,42 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
+
+$size : 13px;
+.icon {
+    width: $size;
+    height: $size;
+    border-radius: 4px;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    background-color: $black-lightest;
+    -webkit-mask: url(/int-link.svg) no-repeat center;
+    mask: url(/int-link.svg) no-repeat center;
+}
 
 .frame {
     position: relative;
     cursor: pointer;
-    margin-bottom: 18px;
-    border: 1px solid #e0e0e0;
-    padding: 14px 16px;
-    padding-bottom: 16px;
+    margin-bottom: 20px;
+    padding: 20px 22px;
+    padding-bottom: 22px;
     transition: all .3s ease;
-    border-radius: 10px;
+    // background-color: #00000005;
+    border: 1px solid #e0e0e0;
+    // border: 1px solid $blue;
+    border-radius: 8px;
+    // box-shadow: rgba(0, 0, 0, 0.123) 0px 3px 10px -1px ;
+    // box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 4px -1px ;
     &:last-child {
         margin-bottom: 0px;
     }
     &:hover {
         border-color: $blue;
         box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 4px -1px ;
+        // box-shadow: rgba(0, 0, 0, 0.425) 0px 3px 8px -1px ;
+        .icon {
+            background-color: $blue;
+        }
     }
     a {
         color: $black-lighter;
@@ -23,7 +45,7 @@
 }
 
 .title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 .company {
@@ -43,9 +65,9 @@
 }
 .disclaimer {
     margin-top: 13px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     span {
-        font-size: 13px;
+        font-size: 14px;
         padding: 4px 8px;
         background-color: #ff000018;
         border-radius: 5px;
@@ -53,7 +75,29 @@
     }
 }
 
-@media( max-width : 540px ) {
+
+@media( max-width : $media-medium )  {
+    .frame {
+        border: 1px solid #e0e0e0;
+        padding: 14px 16px;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0) 0px 1px 4px -1px ;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .disclaimer {
+        margin-top: 13px;
+        margin-bottom: 2px;
+        span {
+            font-size: 13px;
+        }
+    }
+}
+
+@media( max-width : $media-phone ) {
     .frame {
         padding: 14px 12px;
         margin-bottom: 18px;
