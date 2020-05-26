@@ -28,7 +28,7 @@ const calcScale = (distance: number) => {
 const GatePage = () => {
     const gate = useRef<HTMLDivElement>(null)
     const [coordinates, setCoordinates] = useState({x: -3, y: 3, s: 1})
-    const [mouse, setMouse] = useState({x: 0, y: 0})
+    const [mouse, setMouse] = useState({x: 0, y: 0, d: false})
     const [parallax, setParallax] = useState(false)
     const description = `Personal site of ${summary.first_name} ${summary.last_name}`
 
@@ -41,7 +41,13 @@ const GatePage = () => {
         let distance = vectorDistance({x: 0, y: 0}, {x:x, y:y})
         let s = calcScale(distance)
         setCoordinates({x: x, y: y, s: s})
-        setMouse({x: e.clientX, y: e.clientY})
+        let d = (
+            mouse.x < 70 ||
+            mouse.x > gate.current.offsetWidth - 70 ||
+            mouse.y < 70 ||
+            mouse.y > gate.current.offsetHeight - 70
+        )? false : true
+        setMouse({x: e.clientX, y: e.clientY, d:d})
     }
 
     return (
@@ -55,8 +61,7 @@ const GatePage = () => {
                 style={{
                     top: `${mouse.y}px`,
                     left: `${mouse.x}px`,
-                    display: mouse.x > gate.current.offsetWidth - 70 || mouse.y > gate.current.offsetHeight - 70?
-                        'none' : 'flex'
+                    display: mouse.d? 'flex' : 'none'
                 }}
             />
             <div className={styles.gate__parallax}>
