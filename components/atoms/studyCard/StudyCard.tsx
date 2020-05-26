@@ -4,6 +4,8 @@ import cn from 'classnames'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import { subMenu } from '../../../content/router'
+import Icon from '@mdi/react'
+import { mdiLinkVariant } from '@mdi/js'
 
 export interface StudyCardProps {
     school: Study
@@ -20,7 +22,9 @@ const StudyCardDefault = ({school}: StudyCardProps) => (
             <div className={styles.dot} />
         </div>
         {/* <img src="/int-link.svg" alt="Internal Link" className={styles.icon} /> */}
-        <div className={styles.icon} />
+        <div className={styles.icon}>
+            <Icon path={mdiLinkVariant} />
+        </div>
     </Fragment>
 )
 

@@ -1,18 +1,39 @@
 import styles from './HeaderPhone.module.scss'
 import { mainMenu } from '../../../content/router'
 import NavLink from '../../atoms/navLink'
+import { RouteObj } from '../../../content/model'
+import Icon from '@mdi/react'
+import { mdiHomeOutline } from '@mdi/js'
+import { mdiPostOutline } from '@mdi/js'
+import { mdiBriefcaseVariantOutline } from '@mdi/js'
+import { mdiAccountOutline } from '@mdi/js'
+
+const menu: RouteObj[] = [{
+    href: '/',
+    title: 'Home'
+}, ...mainMenu.reverse()]
+
+const icon = [
+    mdiHomeOutline,
+    mdiPostOutline,
+    mdiBriefcaseVariantOutline,
+    mdiAccountOutline
+]
 
 const HeaderPhone = () => (
     <div className={styles.bottom}>
-        {mainMenu.map(item => (
+        {menu.map((item, i) => (
             <NavLink
                 key={item.href}
                 href={item.href}
                 className={styles.bottom__link}
                 activeClass={styles.active}
             >
-                <a>{item.title}</a>
-                <div />
+                <a>
+                    <Icon path={icon[i]} />
+                    {item.title}
+                </a>
+                {/* <div /> */}
             </NavLink>
         ))}
     </div>
