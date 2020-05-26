@@ -1,61 +1,88 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
 
 $bg-color: #ffff;
 $dot-color: $blue;
 
 $dot-size: 1px;
 $dot-space: 26px;
-$gap: 40px;
+$gap: 70px;
 
 .me {
     width: 100%;
-    margin: 80px 0;
-    margin-bottom: 130px;
+    margin: 100px 0;
+    margin-bottom: 180px;
     display: grid;
-    grid-template-columns: [me0] 200px [me1] 1fr [me2];
+    grid-template-columns: [me0] 280px [me1] 1fr [me2];
     &__pict {
         position: relative;
         img {
             position: absolute;
-            height: 200px;
+            height: 280px;
             z-index: 2;
+            background-color: $black-lightest;
         }
     }
     &__slogan {
         margin-left: $gap;
-        font-size: 32px;
+        font-size: 48px;
         font-weight: bold;
         color: $black;
         letter-spacing: -.020em;
         line-height: 1.2;
-        width: 60%;
+        width: 70%;
     }
     &__box {
         line-height: 1.6;
-        max-width: 740px;
-        margin-top: 20px;
-        margin-left: 100px;
+        max-width: 940px;
+        margin-top: 40px;
+        margin-left: 140px;
         margin-right: auto;
         grid-column: me0 / m02;
-        padding: 30px;
-        padding-left: 100px + $gap;
-        padding-bottom: 50px;
+        padding: 50px 70px;
+        padding-left: 140px + $gap;
+        padding-bottom: 70px;
         border: 1px solid #00000010;
         border-radius: 8px;
         background-color: $bg-color;
         background:
-            linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-            linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-            $dot-color;
+        linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+        linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+        $dot-color;
         background-size: $dot-space $dot-space;
-        font-size: 14px;
         color: $black;
         white-space: pre-line;
         a { color: $blue; }
     }
 }
 
-@media( max-width : 540px ) {
+@media( max-width : $media-medium ) {
+    $gap: 40px;
+
+    .me {
+        margin: 80px 0;
+        margin-bottom: 130px;
+        grid-template-columns: [me0] 200px [me1] 1fr [me2];
+        &__pict img {
+            height: 200px;
+        }
+        &__slogan {
+            margin-left: $gap;
+            width: 60%;
+            font-size: 32px;
+        }
+        &__box {
+            margin-top: 20px;
+            padding: 30px 50px;
+            max-width: 760px;
+            margin-left: 100px;
+            padding-left: 100px + $gap;
+            padding-bottom: 50px;
+        }
+    }
+}
+
+@media( max-width : $media-phone ) {
     $dot-color: #00000046;
     
     .me {

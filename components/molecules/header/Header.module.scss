@@ -3,17 +3,18 @@
 
 .header {
     position: relative;
-    height: $header_height;
+    height: $header_height-full;
     width: 100%;
     &__bar {
+        box-sizing: content-box;
         width: 100%;
-        height: $header_height;
+        height: $header_height-full;
         background-color: white;
         position: fixed;
         z-index: 100;
         // box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 1px -1px ;
         &__wrapper {
-            max-width: $max-width;
+            max-width: $max-width-full;
             padding: 0 $max-padding;
             margin: 0 auto;
             height: 100%;
@@ -28,14 +29,14 @@
         align-items: center;
         img {
             transition: all .2s ease;
-            height: 24px;
+            height: 28px;
             transform: translate(-5px);
         }
         div {
             transition: all .2s ease;
             font-weight: bold;
             color: $black;
-            font-size: 24px;
+            font-size: 26px;
             letter-spacing: -.016em;
             transform: translate(-1px);
         }
@@ -81,7 +82,28 @@
     }
 }
 
-@media( max-width : 540px ) {
+@media( max-width : $media-medium ) {
+    .header{
+        height: $header_height;
+        &__bar{
+            height: $header_height;
+            &__wrapper {
+                max-width: $max-width;
+            }
+        }
+        &__icon {
+            img {
+                height: 24px;
+            }
+            div {
+                font-size: 24px;
+                letter-spacing: -.016em;
+            }
+        }
+    }
+}
+
+@media( max-width : $media-phone ) {
     .header__bar {position: absolute;}
     .header__menu {
         visibility: hidden;

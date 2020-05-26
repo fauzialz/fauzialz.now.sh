@@ -1,25 +1,26 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
 
 .card, .card__detailed {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 8px;
     width: 100%;
     margin-left: 20px;
     color: $black;
-    padding: 12px 14px;
+    padding: 18px 20px;
     border: 1px solid #efefef;
     position: relative;
     background-color: white;
     a { text-decoration: none; }
     .name, .degree, .time{
         color: $black-lighter;
-        font-size: 14px;
+        // font-size: 14px;
     }
     // .name { font-weight: bolder; }
     .time, .degree {margin-top: 10px;}
     .degree {
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.6;
     }
     .dot_socket {
@@ -38,6 +39,19 @@
             background-color: #efefef;
         }
     }
+    $size : 13px;
+    .icon {
+        width: $size;
+        height: $size;
+        border-radius: 4px;
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        background-color: $black-lightest;
+        -webkit-mask: url(/int-link.svg) no-repeat center;
+        mask: url(/int-link.svg) no-repeat center;
+        display: none;
+    }
 }
 
 .card__detailed {
@@ -45,9 +59,15 @@
     transition: all .3s ease;
     border-color: #e0e0e0;
     .name { font-weight: bolder; }
+    .icon {
+        display: flex;
+    }
     &:hover {
         border-color: $blue;
         box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 4px -1px ;
+        .icon {
+            background-color: $blue;
+        }
     }
     .dot_socket .dot {
         transform: translate(0, -9px);
@@ -58,7 +78,16 @@
     }
 }
 
-@media( max-width : 540px ) {
+@media( max-width : $media-medium ) {
+    .card, .card__detailed {
+        padding: 12px 14px;
+        .degree {
+            font-size: 13px;
+        }
+    }
+}
+
+@media( max-width : $media-phone ) {
     .card, .card__detailed {
         margin-left: 10px;
     }

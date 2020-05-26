@@ -1,6 +1,7 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
 
-@media( max-width : 540px ) {
+@media( max-width : $media-phone + 160px ) {
     .feeds {
         padding: 0 20px;
     }

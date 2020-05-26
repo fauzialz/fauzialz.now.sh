@@ -1,4 +1,5 @@
 @import './color';
+@import './sizing';
 
 body {
     // background-color: $blue-lighter;
@@ -11,4 +12,11 @@ body {
 
 * {
     box-sizing: border-box;
+    font-size: 16px;
+}
+
+@media( max-width : $media-medium ) {
+    * {
+        font-size: 14px;
+    }
 }

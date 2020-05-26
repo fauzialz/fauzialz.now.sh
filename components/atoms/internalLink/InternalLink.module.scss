@@ -1,0 +1,17 @@
+@import '../../../style/color';
+
+.link {
+    transition: all .1s ease;
+    div {
+        transition: all .1s ease;
+        display: inline-block;
+        background-color: #4699ff;
+        width: 11px;
+        height: 11px;
+        -webkit-mask: url(/int-link.svg) no-repeat center;
+        mask: url(/int-link.svg) no-repeat center;
+        transform: translate(0px, 1px);
+        margin-left: 4px;
+        margin-right: 1px;
+    }
+}
