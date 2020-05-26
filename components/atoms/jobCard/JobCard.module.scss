@@ -3,15 +3,13 @@
 
 $size : 13px;
 .icon {
-    width: $size;
-    height: $size;
-    border-radius: 4px;
     position: absolute;
-    right: 16px;
-    bottom: 16px;
-    background-color: $black-lightest;
-    -webkit-mask: url(/int-link.svg) no-repeat center;
-    mask: url(/int-link.svg) no-repeat center;
+    right: 14px;
+    bottom: 12px;
+    svg {
+        width: 16px;
+        color: $black-lighter;
+    }
 }
 
 .frame {
@@ -34,8 +32,8 @@ $size : 13px;
         border-color: $blue;
         box-shadow: rgba(0, 0, 0, 0.425) 0px 1px 4px -1px ;
         // box-shadow: rgba(0, 0, 0, 0.425) 0px 3px 8px -1px ;
-        .icon {
-            background-color: $blue;
+        .icon svg {
+            color: $blue;
         }
     }
     a {

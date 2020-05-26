@@ -3,6 +3,8 @@ import { Experience } from '../../../content/model'
 import { monthNames } from '../../../content/const'
 import Link from 'next/link'
 import { subMenu } from '../../../content/router'
+import Icon from '@mdi/react'
+import { mdiLinkVariant } from '@mdi/js'
 
 interface JobCardProps {
     job: Experience
@@ -37,7 +39,9 @@ const JobCard = ({job}: JobCardProps) => (
             <div className={styles.disclaimer}>
                 <span>{job.disclaimer}</span>
             </div>}
-            <div className={styles.icon} />
+            <div className={styles.icon}>
+                <Icon path={mdiLinkVariant} />
+            </div>
         </a></Link>
     </div>
 )

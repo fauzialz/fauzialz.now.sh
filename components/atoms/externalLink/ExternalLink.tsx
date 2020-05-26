@@ -1,6 +1,7 @@
-import Link from "next/link";
 import styles from "./ExternalLink.module.scss"
 import { ReactNode } from "react";
+import Icon from '@mdi/react'
+import { mdiOpenInNew } from '@mdi/js'
 
 interface ExternalLinkProps {
     href: string
@@ -8,7 +9,10 @@ interface ExternalLinkProps {
 }
 
 const ExternalLink = ({href, children}: ExternalLinkProps) => (
-    <a href={href} target="blank" className={styles.link}>{children}<div /></a>
+    <a href={href} target="blank" className={styles.link}>
+        {children}
+        <Icon path={mdiOpenInNew} />
+    </a>
 )
 
 export default ExternalLink
