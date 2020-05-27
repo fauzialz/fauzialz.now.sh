@@ -1,7 +1,9 @@
 @import '../../../style/color';
 @import '../../../style/sizing';
 
-$bg-color: #f4f7f6;
+// $bg-color: #ffff;
+// $bg-color: #f4f7f6;
+$bg-color: #e7eeed;
 // $bg-color: hsl(256,33,10);
 $dot-color: $blue;
 
@@ -14,8 +16,9 @@ $dot-space: 26px;
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
-    background: radial-gradient(circle, #fdfcf4 0%, transparent 70%);
+    background: radial-gradient(circle, rgb(255, 253, 239) 0%, transparent 70%);
     transform: translate(-50%, -50%);
+    opacity: .4;
 }
 
 .gate {

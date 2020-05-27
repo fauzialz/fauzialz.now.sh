@@ -1,4 +1,4 @@
-import BioPage from "../components/pages/bioPage";
+import BioPage from "../../components/pages/bioPage";
 
 const Bio = () => (
     <BioPage />

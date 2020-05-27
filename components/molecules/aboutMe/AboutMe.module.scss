@@ -16,6 +16,15 @@ $gap: 70px;
     grid-template-columns: [me0] 280px [me1] 1fr [me2];
     &__pict {
         position: relative;
+        div {
+            width: 20px;
+            height: 4px;
+            background-color: $black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
         img {
             position: absolute;
             height: 280px;
@@ -34,15 +43,15 @@ $gap: 70px;
     }
     &__box {
         line-height: 1.6;
-        max-width: 940px;
-        margin-top: 40px;
+        max-width: 920px;
+        margin-top: 20px;
         margin-left: 140px;
         margin-right: auto;
         grid-column: me0 / m02;
-        padding: 50px 70px;
+        padding: 30px 70px;
         padding-left: 140px + $gap;
-        padding-bottom: 70px;
-        border: 1px solid #00000010;
+        padding-bottom: 50px;
+        border: 1px solid #ebebeb;
         border-radius: 8px;
         background-color: $bg-color;
         background:
@@ -52,8 +61,21 @@ $gap: 70px;
         background-size: $dot-space $dot-space;
         color: $black;
         white-space: pre-line;
+        font-size: 15px;
         a { color: $blue; }
     }
+}
+
+.print {
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: $blue-font;
+    color: white;
+    box-shadow: $blue 0px 1px 7px -1px ;
+    // margin-right: 8px;
+    // margin-top: 22px;
 }
 
 @media( max-width : $media-medium ) {
@@ -76,7 +98,11 @@ $gap: 70px;
             margin-left: 100px;
             padding-left: 100px + $gap;
             padding-bottom: 50px;
+            font-size: 14px;
         }
+    }
+    .print {
+        font-size: 14px;
     }
 }
 
@@ -86,12 +112,17 @@ $gap: 70px;
     .me {
         margin-top: -10px;
         margin-bottom: 40px;
-        &__pict img {
-            height: 70px;
-            border-radius: 50%;
-            grid-column: me0 / m02;
-            position: relative;
-            margin-bottom: 6px;
+        &__pict {
+            div {
+                display: none;
+            }
+            img {
+                height: 70px;
+                border-radius: 50%;
+                grid-column: me0 / m02;
+                position: relative;
+                margin-bottom: 6px;
+            }
         }
         &__slogan {
             grid-column: me0 / m02;

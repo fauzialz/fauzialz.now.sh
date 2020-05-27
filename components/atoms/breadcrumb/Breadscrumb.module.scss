@@ -1,0 +1,26 @@
+@import '../../../style/color';
+
+.frame {
+    display: flex;
+    color: $black;
+    align-items: center;
+    margin-bottom: 10px;
+    transform: translate(-8px);
+}
+.link, .linkActive {
+    color: $black-lighter;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all .3s ease;
+    &:hover, &:focus {
+        background-color: rgba(0, 0, 0, 0.062);
+    }
+}
+.linkActive {
+    color: $black;
+    font-weight: 600;
+}
+.divider {
+    padding: 0 4px;
+}
