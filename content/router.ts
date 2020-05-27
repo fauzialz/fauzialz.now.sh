@@ -12,6 +12,6 @@ interface SubMenu {
 }
 
 export const subMenu: SubMenu = {
-    edu: {href: '/studies', title: 'Studies'},
-    exp: {href: '/experiences', title: 'Experiences'},
+    edu: {href: `${mainMenu[0].href}/studies`, title: 'Studies'},
+    exp: {href: `${mainMenu[0].href}/experiences`, title: 'Experiences'},
 }

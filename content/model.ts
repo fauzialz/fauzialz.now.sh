@@ -9,6 +9,13 @@ export interface Summary {
     slogan: string
     city: string
     country: string
+    email: string
+    phone?: string
+}
+
+export interface Social {
+    title: string
+    link: string
 }
 
 export interface StudyActivity {

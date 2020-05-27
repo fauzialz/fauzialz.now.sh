@@ -1,17 +1,24 @@
-import { Summary, Study, Experience } from "./model"
+import { Summary, Study, Experience, Social } from "./model"
 
 export const summary: Summary = {
     alias: 'fauzialz',
     first_name: 'Fauzi',
     last_name: 'Al Aziz',
-    title_short: 'Web Dev',
+    title_short: 'Web Development',
     title_long: 'self-taught designer and full-stack code typist',
     born: new Date(2012, 10, 8),
     slogan: 'Commit and push\nwas a life lessons I learn from Git.',
-    about: "I started learning web dev since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
+    about: "I started learning web development since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
     city: 'Jakarta',
-    country: 'Indonesia'
+    country: 'Indonesia',
+    email: 'alaziz.fauzi@gmail.com'
 }
+
+export const social: Social[] = [
+    {title: 'Twitter', link: 'https://twitter.com/fauzialz'},
+    {title: 'Instagram' , link:'https://www.instagram.com/fauzialz/'},
+    {title: 'LinkedIn', link:'https://www.linkedin.com/in/fauzi-al-aziz-107145137/'}
+]
 
 export const study: Study[] = [
     {
