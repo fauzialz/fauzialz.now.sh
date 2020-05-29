@@ -1,0 +1,128 @@
+@import '../../../style/color';
+
+.frame {
+    width: 100%;
+    // padding: 20px 0px;
+    border-bottom: 1px solid #D8D8D8;
+    
+}
+
+.wrapper {
+    display: flex;
+    a {
+        text-decoration: none;
+        width: calc(100% - 200px)
+    }
+}
+
+.time, .content {
+    padding: 20px 0px;
+}
+
+.time {
+    width: 200px;
+    border-right: 1px solid #D8D8D8;
+    span {
+        display: flex;
+        font-size: 14px;
+        div {
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 6px;
+            padding-right: 6px;
+            &:last-child {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+.content, .contentNo {
+    width: 100%;
+    padding: 20px 0px 18px 40px;
+    color: $black;
+}
+.contentNo { width: calc(100% - 200px);}
+.title {
+    font-size: 14.5px;
+    font-weight: 600;
+}
+.subTitle {
+    margin-top: 8px;
+    span {
+        font-size: 12px;
+        padding: 5px 6px;
+        padding-top: 4px;
+        border: 1px solid #eeeeee;
+        // background-color: #fed56280;
+        border-radius: 5px;
+    }
+}
+.socket {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.noteLink, .noteNoLink {
+    margin-top: 18px;
+    display: flex;
+    height: 24px;
+    // border: 1px solid seagreen;
+    .icon {
+        height: 100%;
+        width: 22px;
+        background-color: #01C6B4;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .text {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 11.5px;
+        padding: 0px 10px;
+        background-color: #01c6b480;
+        color: black;
+    }
+}
+.noteNoLink {
+    .icon {
+        background-color: #FF3F73;
+    }
+    .text {
+        background-color: #ff3f7380;
+    }
+}
+
+@media( max-width : 800px ) {
+    .wrapper a, .contentNo {
+        width: calc(100% - 100px);
+    }
+    .time {
+        width: 100px;
+        span {
+            width: 80px;
+            font-size: 12px;
+            flex-direction: column;
+            div {
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:last-child {
+                    border-bottom: none;
+                    padding-top: 4px;
+                }
+            }
+        }
+    }
+    .subTitle {
+        span {
+            font-size: 14px;
+            padding: 0px;
+            // padding-top: 4px;
+            border: 0px solid #eeeeee;
+            // background-color: #fed56280;
+            border-radius: 5px;
+        }
+    }
+}

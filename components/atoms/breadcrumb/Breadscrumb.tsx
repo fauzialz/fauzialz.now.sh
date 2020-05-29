@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { RouteObj } from "../../../content/model"
-import { mainMenu } from "../../../content/router"
+import { routeAlias } from "../../../content/router"
 import styles from './Breadscrumb.module.scss'
 import Link from "next/link"
 import { Fragment } from "react"
@@ -11,8 +11,8 @@ const getBreadscrumbList = (tree: string[]) => {
     let hrefString = ''
     for (let i in tree) {
         hrefString = `${hrefString}/${tree[i]}`
-        let refIndex =  mainMenu.findIndex(e => e.href === hrefString)
-        let title = refIndex > -1?  mainMenu[refIndex].title.toLowerCase() : tree[i].toLowerCase()
+        let refIndex =  routeAlias.findIndex(e => e.href === hrefString)
+        let title = refIndex > -1?  routeAlias[refIndex].title.toLowerCase() : tree[i].toLowerCase()
         breadscrumbList.push({
             title: title,
             href: hrefString

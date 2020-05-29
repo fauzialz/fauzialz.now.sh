@@ -14,7 +14,7 @@ export interface StudyCardProps {
 const StudyCardDefault = ({school}: StudyCardProps) => (
     <Fragment>
         <div className={styles.name}>{school.school_name}</div>
-        {school.degree && <div className={styles.degree}>{school.degree.level} degree, {school.major}</div>}
+        {school.degree && <div className={styles.degree}>{school.degree.level} degree, <br /> {school.major}</div>}
         <div className={styles.time}>
             {school.start.getFullYear()} - {school.end.getFullYear()}
         </div>

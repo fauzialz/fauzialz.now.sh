@@ -12,7 +12,9 @@ interface NavLInkProps {
 const NavLink = ({href, children, className, activeClass}: NavLInkProps) => {
     let router = useRouter()
     // let innerClassName = router.pathname === href? `${className} ${activeClass}` : className
-    let innerClassName = router.pathname.includes(href) ? `${className} ${activeClass}` : className
+    let innerClassName = href === '/' && router.pathname === href?
+        `${className} ${activeClass}`:
+        router.pathname.includes(href) && href !== '/' ? `${className} ${activeClass}` : className
 
     return (
         <Link href={href}>

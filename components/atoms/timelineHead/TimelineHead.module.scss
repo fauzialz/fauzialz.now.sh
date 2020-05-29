@@ -1,0 +1,14 @@
+@import '../../../style/color';
+
+.title {
+    font-size: 24px;
+    color: $black;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.line {
+    width: 100%;
+    border-bottom: 1px solid #D8D8D8;
+}

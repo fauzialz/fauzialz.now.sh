@@ -1,0 +1,13 @@
+@import '../../../style/sizing';
+
+.center {
+    max-width: $max-width-full;
+    margin: 0 auto;
+    padding: 0 $max-padding;
+}
+
+@media( max-width : $media-medium ) {
+    .center {
+        max-width: $max-width;
+    }
+}
