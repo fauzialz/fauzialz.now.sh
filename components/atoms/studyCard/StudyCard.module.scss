@@ -8,7 +8,7 @@
     width: 100%;
     margin-left: 20px;
     color: $black;
-    padding: 18px 20px;
+    padding: 12px 14px;
     border: 1px solid #efefef;
     position: relative;
     background-color: white;
@@ -77,7 +77,6 @@
 
 @media( max-width : $media-medium ) {
     .card, .card__detailed {
-        padding: 12px 14px;
         .degree {
             font-size: 13px;
         }

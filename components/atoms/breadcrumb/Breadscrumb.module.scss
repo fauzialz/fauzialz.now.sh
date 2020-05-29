@@ -1,20 +1,20 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
 
 .frame {
     display: flex;
     color: $black;
     align-items: center;
     margin-bottom: 10px;
-    transform: translate(-8px);
 }
 .link, .linkActive {
+    font-size: 13px;
     color: $black-lighter;
     text-decoration: none;
-    padding: 4px 8px;
     border-radius: 4px;
     transition: all .3s ease;
     &:hover, &:focus {
-        background-color: rgba(0, 0, 0, 0.062);
+        text-decoration: underline;
     }
 }
 .linkActive {
@@ -22,5 +22,11 @@
     font-weight: 600;
 }
 .divider {
-    padding: 0 4px;
+    padding: 0 12px;
+}
+
+@media( max-width : $media-medium ) {
+    .link, .linkActive {
+        font-size: 12px;
+    }
 }

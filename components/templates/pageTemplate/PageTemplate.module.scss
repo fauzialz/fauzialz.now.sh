@@ -2,15 +2,8 @@
 
 .template {
     &__wrapper {
-        max-width: $max-width-full;
-        margin: 0 auto;
-        padding: 0 $max-padding;
         padding-top: 22px;
     }
-}
-
-@media( max-width : $media-medium ) {
-    .template__wrapper { max-width: $max-width;;}
 }
 
 @media( max-width : $media-phone ) {

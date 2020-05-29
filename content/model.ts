@@ -45,7 +45,7 @@ export interface Study {
     start: Date
     end: Date
     summary: string
-    route: string
+    route?: string
     activities?: StudyActivity[]
 }
 

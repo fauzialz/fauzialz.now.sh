@@ -26,9 +26,8 @@ export const study: Study[] = [
         detailed: false,
         school_name: 'MIN 13 Muktisari',
         city: 'Ciamis',
-        start: new Date(),
-        end: new Date(),
-        route: '/min',
+        start: new Date(2002, 5),
+        end: new Date(2008, 3),
         summary: 'The school was MI PUI Cigebot back there.'
     },
     {
@@ -36,9 +35,8 @@ export const study: Study[] = [
         detailed: false,
         school_name: 'MTsN 4 Ciamis',
         city: 'Ciamis',
-        start: new Date(),
+        start: new Date(2008, 4),
         end: new Date(2011, 1),
-        route: '/mtsn',
         summary: 'The school was MTsN Buniseuri back there.'
     },
     {
@@ -48,7 +46,6 @@ export const study: Study[] = [
         city: 'Ciamis',
         start: new Date(2011, 1),
         end: new Date(2014, 6), // Juli 2014
-        route: '/sma',
         summary: 'Regular high school with the addition of a computer science curriculum. In this period of time, I learn to design more than programming'
     },
     {
@@ -194,6 +191,10 @@ export const experience: Experience[] = [
             }
         ]
     }
-] 
+]
 
-export const sortedExp = experience.sort((a, b) => ((b.start.getFullYear() + b.start.getMonth()) - (a.start.getFullYear() + a.start.getMonth())))
+let exp = [...experience]
+let stdy = [...study]
+
+export const sortedExp = exp.sort((a, b) => ((b.start.getFullYear() + b.start.getMonth()) - (a.start.getFullYear() + a.start.getMonth())))
+export const sortedStdy = stdy.sort((a, b) => ((b.level) - (a.level)))

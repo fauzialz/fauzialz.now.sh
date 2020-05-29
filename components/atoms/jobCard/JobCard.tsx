@@ -1,6 +1,6 @@
 import styles from './JobCard.module.scss'
 import { Experience } from '../../../content/model'
-import { monthNames } from '../../../content/const'
+import { printDate, printInterval } from '../../../content/const'
 import Link from 'next/link'
 import { subMenu } from '../../../content/router'
 import Icon from '@mdi/react'
@@ -8,18 +8,6 @@ import { mdiLinkVariant } from '@mdi/js'
 
 interface JobCardProps {
     job: Experience
-}
-
-const printDate = (date: Date) => `${monthNames[date.getMonth()].substr(0,3)} ${date.getFullYear()}`
-const printInterval = (date: Date) => {
-    let now = new Date()
-    let gap = (now.getTime() - date.getTime()) / 1000 / 60 / 60
-    let days = Math.floor(gap / 24)
-    let year = Math.floor(days / 365)
-    let month = year > 0? Math.floor((days - (year * 365)) / 30) : Math.floor(days / 30)
-    let printYear = year > 0 ? `${year} yr` : ''
-    let printMonth = month > 0? `${month} mos` : ''
-    return `${printYear} ${printMonth}`
 }
 
 const JobCard = ({job}: JobCardProps) => (
