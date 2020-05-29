@@ -5,15 +5,16 @@ import StudyCard from '../../atoms/studyCard'
 import BioSection from '../../templates/bioSection'
 import { subMenu } from '../../../content/router'
 import Center from '../../atoms/center'
+import { eduDetail } from '../../../pages/bio/studies'
 
-const studyDetail = 'In case you want to see my education record, my two latest education stages are shown.'
+const eduTail = 'In this section my two latest education stages are shown.'
 
 const Study = () => (
     <Center>
         <section id="study">
             <BioSection
                 title="Formal Education"
-                detail={studyDetail}
+                detail={eduDetail.charAt(0).toUpperCase() + eduDetail.slice(1) + ' ' + eduTail}
                 seeDetail="See full study record"
                 seeDetailHref={subMenu.edu.href}
             >
