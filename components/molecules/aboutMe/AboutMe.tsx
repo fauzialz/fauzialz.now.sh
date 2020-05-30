@@ -8,6 +8,7 @@ import Center from '../../atoms/center'
 
 const currentJob = sortedExp[0]
 const anOrA = (word: string) => firstIsVowel(word)? 'an' : 'a'
+const resumeLink = 'https://drive.google.com/file/d/1qVBHdcaazMFjBvukH0i6GWDkGLBk404o/view?usp=sharing'
 
 const AboutMe = () => {
 
@@ -52,11 +53,9 @@ const AboutMe = () => {
                     ))}
                     {' '} or send a message to <ExternalLink href={summary.email}>{summary.email}</ExternalLink>. You can also
                     <br /><br />
-                    <Link href="/print">
-                        <a target="blank"><button className={styles.print}>
-                            Print Resume
-                        </button></a>
-                    </Link>
+                    <a href={resumeLink} target="blank"><button className={styles.print}>
+                        Print Resume
+                    </button></a>
                 </div>
             </section>
         </Center>
