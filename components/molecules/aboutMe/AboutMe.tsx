@@ -8,7 +8,7 @@ import Center from '../../atoms/center'
 
 const currentJob = sortedExp[0]
 const anOrA = (word: string) => firstIsVowel(word)? 'an' : 'a'
-const resumeLink = 'https://drive.google.com/file/d/1qVBHdcaazMFjBvukH0i6GWDkGLBk404o/view?usp=sharing'
+const resumeLink = 'https://drive.google.com/file/d/1DQLGbumnT14ZcoeYJszOfUIuSK9flCIj/view?usp=sharing'
 
 const AboutMe = () => {
 
