@@ -156,36 +156,36 @@ export const experience: Experience[] = [
         jobDesc: [
             {
                 title: 'Daily Ticketing',
-                description: 'Investigate and solving problem in Tech Logistic area, which is fixing errors in the data by following the complex logistic business flow.',
+                description: 'Solve daily Zendesk ticket: Collaborate with Engineer to Investigate and solve problems in Tech Logistic area, mainly fixing errors in the data by following the complex logistic business flow.',
             },
             {
                 title: 'Maintain and Manage Logistic Database',
-                description: 'Working with Query in MySQL and PostgreSQL to minimally maintain and manage Logistic Database.',
+                description: 'Working with Query in MySQL and PostgreSQL to provide data or maintain and manage Logistic Database.',
                 tech_stack: ['MySQL', 'PostgreSQL']
             },
             {
                 title: 'Scripting',
-                description: 'Operate or create new Python scripts (Django framework) to manage complex relations of data.',
+                description: 'Operate or create new Python scripts (Django Framework) to manage or fix errors on complex relations of data.',
                 tech_stack: ['Python', 'Django']
             },
             {
                 title: 'Dashboard Permana',
-                description: 'Adding new features to an existing tool that build with Go (Beego Framework) and JavaScript (jQuery) in MVC architecture.',
+                description: 'Adding new features to an existing tool used by the internal of Mapan that builds with Go (Beego Framework) and JavaScript (jQuery) in MVC architecture.',
                 tech_stack: ['Go', 'Beego', 'JavaScript', 'jQuery', 'HTML', 'CSS']
             },
             {
                 title: 'Integratation with Google Drive API',
-                description: 'Create a Python script to automate upload every new file to Google Drive and a Cron to delete it daily.',
+                description: 'Create a Python script to automate upload every new file to Google Drive to be viewed by Branch Manager and a Cron to delete it daily.',
                 tech_stack: ['Python', 'Google API']
             },
             {
                 title: 'POC Mapan Direct Purchase',
-                description: '',
+                description: 'Collaborate with Product Manager and Backend Engineer to build POC Mapan Direct Purchase Web App using React.',
                 tech_stack: ['JavaScript', 'React', 'SASS']
             },
             {
                 title: 'Gojek WOBI Web App',
-                description: '',
+                description: 'Collaborate with Gojek Engineer to build a web app that concurrently inserts order to Gojek logistic partner app using React.',
                 tech_stack: ['JavaScript', 'React', 'SASS'],
                 Inner_link: '/portofolio/wobi'
             }

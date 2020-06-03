@@ -22,8 +22,10 @@ const Inner = (props: TimeCardProps) => (
         [styles.content] : props.link,
         [styles.contentNo] : !props.link
     })}>
-        <div className={styles.title}>{props.title}</div>
-        {props.subTitle && <div className={styles.subTitle}><span>{props.subTitle}</span></div>}
+        <div className={styles.head}>
+            <div className={styles.title}>{props.title}</div>
+            {props.subTitle && <div className={styles.subTitle}><span>{props.subTitle}</span></div>}
+        </div>
         <div className={styles.socket}>
             {props.children}
         </div>
@@ -49,7 +51,7 @@ const TimeCard = (props : TimeCardProps) => {
                         <span>
                             <div>{printDate(props.start)}</div>
                             <div className={styles.strip}>-</div>
-                            <div>{printDate(props.end)}</div>
+                            <div>{props.end ? printDate(props.end): 'Present'}</div>
                         </span>
                     </div>
                     {props.link?

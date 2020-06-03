@@ -1,4 +1,5 @@
 @import '../../../style/color';
+@import '../../../style/sizing';
 
 .frame {
     width: 100%;
@@ -15,14 +16,14 @@
     }
 }
 
-.time, .content {
-    padding: 20px 0px;
-}
-
 .time {
+    padding-bottom: 20px;
     width: 200px;
     border-right: 1px solid #D8D8D8;
     span {
+        padding-top: 20px;
+        position: sticky;
+        top: $header_height-full;
         display: flex;
         font-size: 14px;
         div {
@@ -37,35 +38,41 @@
 }
 .content, .contentNo {
     width: 100%;
-    padding: 20px 0px 18px 40px;
+    padding: 0px 0px 18px 40px;
     color: $black;
 }
 .contentNo { width: calc(100% - 200px);}
+.head {
+    padding-top: 20px;
+    background-color: white;
+    position: sticky;
+    top: $header_height-full;
+}
 .title {
-    font-size: 14.5px;
     font-weight: 600;
+    
 }
 .subTitle {
-    margin-top: 8px;
+    padding-top: 8px;
+    padding-bottom: 5px;
     span {
-        font-size: 12px;
+        font-size: 14px;
         padding: 5px 6px;
         padding-top: 4px;
         border: 1px solid #eeeeee;
-        // background-color: #fed56280;
         border-radius: 5px;
+        width: fit-content;
     }
 }
 .socket {
-    margin-top: 12px;
-    font-size: 13px;
+    margin-top: 15px;
+    font-size: 14px;
 }
 
 .noteLink, .noteNoLink {
     margin-top: 18px;
     display: flex;
     height: 24px;
-    // border: 1px solid seagreen;
     .icon {
         height: 100%;
         width: 22px;
@@ -94,17 +101,27 @@
     }
 }
 
+@media( max-width : $media-medium ) {
+    .time span {
+        top: $header_height;
+    }
+    .head {
+        top: $header_height;
+    }
+}
+
 @media( max-width : 800px ) {
     .wrapper a, .contentNo {
-        width: calc(100% - 100px);
+        width: calc(100% - 80px);
     }
     .time {
-        width: 100px;
+        width: 68px;
         span {
-            width: 80px;
-            font-size: 12px;
+            top: 0;
+            width: 68px;
             flex-direction: column;
             div {
+                font-size: 12px;
                 &:nth-child(2) {
                     display: none;
                 }
@@ -115,14 +132,25 @@
             }
         }
     }
+    .head {
+        top: 0;
+    }
+    .title {
+        font-size: 14.5px;
+    }
     .subTitle {
+        top: 19px;
         span {
             font-size: 14px;
             padding: 0px;
-            // padding-top: 4px;
             border: 0px solid #eeeeee;
-            // background-color: #fed56280;
             border-radius: 5px;
         }
+    }
+    .content, .contentNo {
+        padding-left: 22px;
+    }
+    .socket {
+        font-size: 13px;
     }
 }

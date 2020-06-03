@@ -1,6 +1,6 @@
 import PageTemplate from "../../../components/templates/pageTemplate";
 import Head from "next/head";
-import { summary, sortedStdy, study } from "../../../content/profile";
+import { summary, sortedStdy } from "../../../content/profile";
 import Breadscrumb from "../../../components/atoms/breadcrumb";
 import Center from "../../../components/atoms/center";
 import TimelineHead from "../../../components/atoms/timelineHead";
@@ -41,7 +41,6 @@ const Studies = () => (
         
         <style jsx>{`
             .summary {
-                font-size: 14px;
                 font-weight: 400;
                 margin-top: 10px;
                 margin-bottom: 24px;
