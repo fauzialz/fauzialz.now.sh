@@ -11,6 +11,7 @@ export interface Summary {
     country: string
     email: string
     phone?: string
+    git?: string
 }
 
 export interface Social {

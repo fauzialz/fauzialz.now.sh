@@ -13,7 +13,7 @@ const InternalLink = ({href, children}: InternalLinkProps) => (
     <Link href={href}>
         <a className={styles.link}>
             {children}
-            <Icon path={mdiLinkVariant} />
+            <Icon path={mdiLinkVariant} size={.68}/>
         </a>
     </Link>
 )

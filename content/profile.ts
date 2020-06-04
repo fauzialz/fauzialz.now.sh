@@ -11,7 +11,9 @@ export const summary: Summary = {
     about: "I started learning web development since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
     city: 'Jakarta',
     country: 'Indonesia',
-    email: 'alaziz.fauzi@gmail.com'
+    email: 'alaziz.fauzi@gmail.com',
+    git: 'https://gitlab.com/fauzialz',
+    phone: '+62-853-5233-1553'
 }
 
 export const social: Social[] = [
@@ -139,7 +141,7 @@ export const experience: Experience[] = [
         important: true,
         type: 'period',
         location: 'Jakarta',
-        tech_stack: ['Node.Js', 'React', 'Angular', 'Vue'],
+        tech_stack: ['MongoDB', 'Node.Js', 'React', 'Angular', 'Vue'],
         description: 'PT Xsis Mitra Utama is a vendor company base on IT solutions for industries. Providing skilled resources in programming.\n\nAs an employee of this company, I have been trained to mastering JavaScript programming language both in client side (frontend) and server side (backend). So basically I am a fullstuck programmer. My skill-set including Node.Js, React.Js, Angular, and Vue.Js. In the idle time, I keep learning to elevate my knowledge and mastering my craft.'
     },
     {

@@ -3,11 +3,12 @@
 .template {
     &__wrapper {
         padding-top: 22px;
+        padding-bottom: 40px;
     }
 }
 
 @media( max-width : $media-phone ) {
     .template__wrapper { 
-        padding-bottom: $header_height;
+        padding-bottom: 20px;
     }
 }

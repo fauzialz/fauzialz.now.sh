@@ -23,7 +23,7 @@ const StudyCardDefault = ({school}: StudyCardProps) => (
         </div>
         {/* <img src="/int-link.svg" alt="Internal Link" className={styles.icon} /> */}
         <div className={styles.icon}>
-            <Icon path={mdiLinkVariant} />
+            <Icon path={mdiLinkVariant} size={.7}/>
         </div>
     </Fragment>
 )

@@ -11,7 +11,7 @@ interface ExternalLinkProps {
 const ExternalLink = ({href, children}: ExternalLinkProps) => (
     <a href={href} target="blank" className={styles.link}>
         {children}
-        <Icon path={mdiOpenInNew} />
+        <Icon path={mdiOpenInNew} size={.68}/>
     </a>
 )
 

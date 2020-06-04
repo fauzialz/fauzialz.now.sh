@@ -28,7 +28,7 @@ const JobCard = ({job}: JobCardProps) => (
                 <span>{job.disclaimer}</span>
             </div>}
             <div className={styles.icon}>
-                <Icon path={mdiLinkVariant} />
+                <Icon path={mdiLinkVariant} size={.7} />
             </div>
         </a></Link>
     </div>

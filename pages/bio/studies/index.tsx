@@ -49,7 +49,7 @@ const Studies = () => (
                 line-height: 1.6;
             }
             .list {
-                margin-bottom: 30px;
+                margin-bottom: 60px;
             }
         `}</style>
     </PageTemplate>

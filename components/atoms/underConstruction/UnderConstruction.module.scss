@@ -1,0 +1,12 @@
+@import '../../../style/sizing';
+
+.frame {
+    width: 100%;
+    height: calc(100vh - #{$header_height-full} - 62px);
+}
+
+@media( max-width : $media-medium ) {
+    .frame {
+        height: calc(100vh - #{$header_height} - 62px);
+    }
+}

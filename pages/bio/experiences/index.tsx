@@ -90,7 +90,7 @@ const Experiences = () => (
                 line-height: 1.6;
             }
             .list {
-                margin-bottom: 30px;
+                margin-bottom: 60px;
             }
             .content {
                 line-height: 1.5;
@@ -128,11 +128,12 @@ const Experiences = () => (
                     margin-top: 10px;
                 }
                 .jobdesk {
+                    width: 100%;
                     list-style: none;
                     padding-left: 0px;
                 }
                 li {
-                    width: 100%;
+                    // width: 100%;
                     margin-left: 0px;
                 }
             }
