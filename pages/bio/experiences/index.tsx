@@ -43,7 +43,7 @@ const Experiences = () => (
             <title>Formal Work Experience Record - {summary.first_name} {summary.last_name}</title>
             <meta name="description" content="Record of Fauzi Al Aziz Fromal Work Experience" />
         </Head>
-        <Center>
+        <Center withHeader>
             <Breadscrumb />
         </Center>
         <TimelineHead title="FORMAL WORK RECORD" >

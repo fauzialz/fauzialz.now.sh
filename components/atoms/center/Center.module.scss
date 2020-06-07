@@ -1,13 +1,25 @@
 @import '../../../style/sizing';
 
-.center {
+.center, .center_padding {
     max-width: $max-width-full;
     margin: 0 auto;
     padding: 0 $max-padding;
 }
+.center_padding {
+    padding-top: $header_height-full + 40px;
+}
 
 @media( max-width : $media-medium ) {
-    .center {
+    .center, .center_padding {
         max-width: $max-width;
+    }
+    .center_padding {
+        padding-top: $header_height + 40px;
+    }
+}
+
+@media( max-width : $media-phone ) {
+    .center_padding {
+        padding-top: $header_height;
     }
 }

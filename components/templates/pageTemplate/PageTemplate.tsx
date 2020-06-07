@@ -21,6 +21,7 @@ const PageTemplate = ({children}: PageTemplateProps) => {
         let content = document.getElementById('content')
         // let boundary = window.innerWidth < 1600 ? 60 : 76
         let top = content.getBoundingClientRect().top
+        console.log(top)
         if( top < 0) top = top * -1
         setPosition(top)
     }

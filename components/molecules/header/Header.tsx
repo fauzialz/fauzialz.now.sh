@@ -8,15 +8,16 @@ import { useEffect, useState, ReactNode } from 'react'
 import Center from '../../atoms/center'
 
 const NavDrop = ({position, children}: { position: number, children: ReactNode}) => {
-    let [boundary, setBoundary] = useState(76)
+    let [boundary, setBoundary] = useState(60)
     let [y1,setY1] = useState(0)
     let [y2, setY2] = useState(0)
 
     useEffect(() => {
-        let boundary = /* window.innerWidth < 1600 ? 60 : */ 76
+        let boundary = 60
+        let delay = 0
         let positionY1 = position
-        let positionY2 = position - 30
-        if(positionY1 < 30) {positionY2 = 0}
+        let positionY2 = position - delay
+        if(positionY1 < delay) {positionY2 = 0}
         
         if(positionY1 > boundary) positionY1 = boundary
         if(positionY2 > boundary) positionY2 = boundary
@@ -52,31 +53,48 @@ const Header = (props: {position: number}) => (
                             <img src="/logo.png" alt="fauzialz logo" />
                         </a>
                     </Link>
+                    <div className={styles.menu_socket}>
+                        {mainMenu.map(item => (
+                            <NavLink
+                                key={item.href}
+                                href={item.href}
+                                className={styles.menu}
+                                activeClass={styles.menu_active}
+                            >
+                                <span data-content={item.title}>
+                                    {item.title}
+                                </span>
+                                <div><div /></div>
+                            </NavLink>
+                        ))}
+                    </div>
                 </div>
             </NavDrop>
 
             <nav className={styles.header__bar} >
                 <div className={styles.header__bar__wrapper}>
                     <Link href="/">
-                        <div className={styles.header__icon}>
+                        <a className={styles.header__icon}>
                             <img src="/logo.png" alt="fauzialz logo" />
                             <div>
                                 {summary.first_name} {summary.last_name}
                             </div>
-                        </div>
+                        </a>
                     </Link>
                 
                     <div className={styles.header__menu}>
                         {mainMenu.map(item => (
                             <NavLink
-                                key={item.href}
-                                href={item.href}
-                                className={styles.header__menu__link}
-                                activeClass={styles.active}
-                            >
-                                <a>{item.title}</a>
-                                <div />
-                            </NavLink>
+                            key={item.href}
+                            href={item.href}
+                            className={styles.menu}
+                            activeClass={styles.menu_active}
+                        >
+                            <span data-content={item.title}>
+                                {item.title}
+                            </span>
+                            <div><div /></div>
+                        </NavLink>
                         ))}
                     </div>
                 </div>

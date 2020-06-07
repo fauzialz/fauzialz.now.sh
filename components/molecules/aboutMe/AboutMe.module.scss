@@ -8,10 +8,15 @@ $dot-size: 1px;
 $dot-space: 26px;
 $gap: 70px;
 
+.frame {
+    background-color: #F7F8F8;
+    padding-top: 180px;
+    padding-bottom: 130px;
+}
+
 .me {
     width: 100%;
-    margin: 80px 0;
-    margin-bottom: 130px;
+    // margin: 80px 0;
     display: grid;
     grid-template-columns: [me0] 280px [me1] 1fr [me2];
     &__pict {

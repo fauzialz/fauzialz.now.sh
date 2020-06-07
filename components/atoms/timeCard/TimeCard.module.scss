@@ -23,7 +23,7 @@
     span {
         padding-top: 20px;
         position: sticky;
-        top: $header_height-full;
+        top: $header_height;
         display: flex;
         font-size: 14px;
         div {
@@ -46,7 +46,7 @@
     padding-top: 20px;
     background-color: white;
     position: sticky;
-    top: $header_height-full;
+    top: $header_height;
 }
 .title {
     font-weight: 600;
@@ -98,15 +98,6 @@
     }
     .text {
         background-color: #ff3f7380;
-    }
-}
-
-@media( max-width : $media-medium ) {
-    .time span {
-        top: $header_height;
-    }
-    .head {
-        top: $header_height;
     }
 }
 

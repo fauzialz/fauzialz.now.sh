@@ -33,10 +33,8 @@ const HeaderPhone = () => {
                     className={styles.bottom__link}
                     activeClass={styles.active}
                 >
-                    <a>
-                        <Icon path={icon[i]} />
-                        {item.title}
-                    </a>
+                    <Icon path={icon[i]} />
+                    {item.title}
                     {/* <div /> */}
                 </NavLink>
             ))}
