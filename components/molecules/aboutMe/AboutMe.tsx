@@ -2,9 +2,10 @@ import styles from './AboutMe.module.scss'
 import { summary, sortedExp, social } from '../../../content/profile'
 import { monthNames, firstIsVowel } from '../../../content/const'
 import ExternalLink from '../../atoms/externalLink'
-import Link from 'next/link'
 import { Fragment } from 'react'
 import Center from '../../atoms/center'
+import Icon from '@mdi/react'
+import { mdiOpenInNew } from '@mdi/js'
 
 const currentJob = sortedExp[0]
 const anOrA = (word: string) => firstIsVowel(word)? 'an' : 'a'
@@ -17,49 +18,68 @@ const AboutMe = () => {
 
     return(
         <section className={styles.frame} id="about">
-            <Center>
-                <div className={styles.me}>
-                    <div className={styles.me__pict} title="this is my best pict, oke">
-                        <img src="/self.jpg" alt={`${summary.first_name} ${summary.last_name}`} />
-                        <div />
+            <div className={styles.background}>
+                <Center>
+                    <div className={styles.grid}>
+                        <h1 className={styles.slogan}>{summary.slogan}</h1>
+                        
+                        <div className={styles.intro_right}>
+                            <div className={styles.pict} title="It's me, Fauzi!">
+                                <img src="/self.jpg" alt={`${summary.first_name} ${summary.last_name}`} />
+                            </div>
+                        </div>
+                        <div className={styles.intro_left}>
+                            <div className={styles.summary}>
+                                <div className={styles.text}>
+                                    <p>
+                                        Hi! My name is {summary.first_name} {summary.last_name}.
+                                        I'm {anOrA(summary.title_long)} {summary.title_long} based in {summary.city}, {summary.country}.
+                                    </p>
+                                    <p>
+                                        {summary.about} From {summary.title_short.toLowerCase()} side, I'm comfortable with TypeScript, React, Redux, Next.Js, Node.js, SASS, MySQL, PostgreSQL.
+                                    </p>
+                                </div>
+                                <div className={styles.text}>
+                                    <p>
+                                        <b>What I do now?</b>
+                                    </p>
+                                    <p>
+                                        I'm {anOrA(currentJob.as)}
+                                        {` ${currentJob.as} `}
+                                        at {currentJob.companySite? <ExternalLink href={currentJob.companySite}>{currentJob.name}</ExternalLink> : ` ${currentJob.name}`}
+                                        {` since`} {`${monthNames[currentJob.start.getMonth()]} ${currentJob.start.getFullYear()}`}. In spare time, I do side projects and learn more thing about programming, especially on the field of Front-end Engineering.
+                                    </p>
+                                    <p>
+                                        If you have a project and you think that I can help, you can say hi to me on {social.map((item, i) => (
+                                            <Fragment key={item.title}>
+                                                {' '}
+                                                <ExternalLink href={item.link}>
+                                                    {item.title}
+                                                </ExternalLink>{i === social.length - 1? '.': ','}
+                                            </Fragment>
+                                        ))}
+                                    </p>
+                                    <div className={styles.resume}>
+                                        <div className={styles.email}>
+                                            Send me an email
+                                            <a href={`mailto:${summary.email}?Subject=Hello!`}>
+                                                {summary.email}
+                                                <Icon path={mdiOpenInNew} size={.68}/>
+                                            </a>
+                                        </div>
+                                        {/* <div className={styles.divider}></div> */}
+                                        <div className={styles.drive}>
+                                            <a href={resumeLink} target="blank"><button className={styles.print}>
+                                                Print Resume
+                                            </button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.me__slogan}>
-                        {summary.slogan}
-                    </div>
-                    <div className={styles.me__box}>
-                        Hi! My name is {summary.first_name} {summary.last_name}.
-                        I'm {anOrA(summary.title_long)} {summary.title_long} based in {summary.city}, {summary.country}.
-                        <br /><br />
-
-                        {summary.about} From {summary.title_short.toLowerCase()} side, I'm comfortable with TypeScript, React, Redux, Next.Js, Node.js, SASS, MySQL, PostgreSQL.
-                        <br /><br />
-
-                        {/* From web development side, I'm comfortable with React, Redux, Next.Js, Node.js, SASS, MySQL, PostgreSQL, and Firebase.
-                        <br /><br /> */}
-                        <b>What I do now?</b><br /><br />
-                        I'm {anOrA(currentJob.as)}
-                        {` ${currentJob.as} `}
-                        at {currentJob.companySite? <ExternalLink href={currentJob.companySite}>{currentJob.name}</ExternalLink> : ` ${currentJob.name}`}
-                        {` since`} {`${monthNames[currentJob.start.getMonth()]} ${currentJob.start.getFullYear()}`}. In spare time, I do side projects and learn more thing about programming, especially on the field of Front-end Engineering.
-                        <br /><br />
-                        {/* <b>If you have a project and think I can help, get in touch.</b><br /><br /> */}
-
-                        If you have a project and think I can help, you can say hi to me on {social.map(item => (
-                            <Fragment key={item.title}>
-                                {' '}
-                                <ExternalLink href={item.link}>
-                                    {item.title}
-                                </ExternalLink>,
-                            </Fragment>
-                        ))}
-                        {' '} or send a message to <ExternalLink href={summary.email}>{summary.email}</ExternalLink>. You can also
-                        <br /><br />
-                        <a href={resumeLink} target="blank"><button className={styles.print}>
-                            Print Resume
-                        </button></a>
-                    </div>
-                </div>
-            </Center>
+                </Center>
+            </div>
         </section>
     )                                                                   
 }

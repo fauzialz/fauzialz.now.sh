@@ -3,7 +3,7 @@
 .center, .center_padding {
     max-width: $max-width-full;
     margin: 0 auto;
-    padding: 0 $max-padding;
+    padding: 0 $max-padding-full;
 }
 .center_padding {
     padding-top: $header_height-full + 40px;
@@ -18,7 +18,16 @@
     }
 }
 
+@media( max-width : $media-mid ) {
+    .center, .center_padding {
+        padding: 0 $max-padding-mid;
+    }
+}
+
 @media( max-width : $media-phone ) {
+    .center, .center_padding {
+        padding: 0 $max-padding;
+    }
     .center_padding {
         padding-top: $header_height;
     }
