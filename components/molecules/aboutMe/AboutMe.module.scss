@@ -8,6 +8,17 @@ $dot-size: 1px;
 $dot-space: 26px;
 $gap: 70px;
 
+@keyframes fade_in {
+    from {
+        transform: translate(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
 .frame {
     background-color: white;
 }
@@ -18,6 +29,26 @@ $gap: 70px;
     padding-bottom: 280px;
     width: inherit;
     height: inherit;
+    position: relative;
+}
+.svg {
+    transform-origin: 100% 0%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(1.1);
+    transition: all .3s ease;
+    svg {
+        transition: all 1.1s ease;
+        path {
+            transition: all 1.1s ease;
+        }
+    }
+    &:hover {
+        svg {
+            transform: translate(0px, -10px);
+        }
+    }
 }
 
 .grid {
@@ -41,6 +72,8 @@ $gap: 70px;
     margin-top: 0px;
     letter-spacing: -.02em;
     line-height: 1.15;
+    z-index: 2;
+    animation: fade_in .3s ease 0s;
 }
 .summary {
     padding-right: 70px;
@@ -51,6 +84,7 @@ $gap: 70px;
     width: 50%;
     padding: 0 20px;
     position: relative;
+    animation: fade_in .5s ease 0s;
     &:last-child {
         padding-right: 0px;
     }
@@ -73,6 +107,7 @@ $gap: 70px;
 
 .email {
     display: flex;
+    font-size: 14px;
     flex-direction: column;
     a {
         color: $black;
@@ -128,6 +163,9 @@ $gap: 70px;
 }
 
 @media( max-width : $media-medium ) {
+    .svg {
+        transform: scale(1);
+    }
     .slogan {
         margin-top: 14px;
         font-size: 48px;
@@ -191,6 +229,9 @@ $gap: 70px;
 }
 
 @media( max-width : $media-mid ) {
+    .svg {
+        transform: scale(.7);
+    }
     .background {
         padding-top: 130px;
         padding-bottom: 160px;
@@ -210,6 +251,9 @@ $gap: 70px;
     .background {
         padding-top: 60px;
         padding-bottom: 120px;
+    }
+    .svg {
+        display: none;
     }
     .slogan {
         font-size: 38px;
