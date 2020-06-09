@@ -2,11 +2,11 @@
 
 .frame {
     width: 100%;
-    height: calc(100vh - #{$header_height-full} - 62px);
+    height: calc(100vh - 62px);
 }
 
 @media( max-width : $media-medium ) {
     .frame {
-        height: calc(100vh - #{$header_height} - 62px);
+        height: calc(100vh - 62px);
     }
 }

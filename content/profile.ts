@@ -7,7 +7,7 @@ export const summary: Summary = {
     title_short: 'Web Development',
     title_long: 'self-taught designer and full-stack code typist',
     born: new Date(2012, 10, 8),
-    slogan: 'Commit and push\nwas a life lessons I learn from Git.',
+    slogan: 'Commit and push\nwere life lessons I learn from Git.',
     about: "I started learning web development since 2018 and have made several things. I'm very obsessed with making something clean and aesthetic.",
     city: 'Jakarta',
     country: 'Indonesia',

@@ -8,61 +8,145 @@ $dot-size: 1px;
 $dot-space: 26px;
 $gap: 70px;
 
-.me {
-    width: 100%;
-    margin: 80px 0;
-    margin-bottom: 130px;
+@keyframes fade_in {
+    from {
+        transform: translate(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
+.frame {
+    background-color: white;
+}
+
+.background {
+    background-color: #F7F8F8;
+    padding-top: 200px;
+    padding-bottom: 280px;
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+.svg {
+    transform-origin: 100% 0%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(1.1);
+    transition: all .3s ease;
+    svg {
+        transition: all 1.1s ease;
+        path {
+            transition: all 1.1s ease;
+        }
+    }
+    &:hover {
+        svg {
+            transform: translate(0px, -10px);
+        }
+    }
+}
+
+.grid {
     display: grid;
-    grid-template-columns: [me0] 280px [me1] 1fr [me2];
-    &__pict {
-        position: relative;
-        div {
-            width: 20px;
-            height: 4px;
-            background-color: $black;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 3;
-        }
-        img {
-            position: absolute;
-            height: 280px;
-            z-index: 2;
-            background-color: $black-lightest;
-        }
+    width: 100%;
+    grid-template-columns: [me0] 1fr [me1] 340px [me2];
+}
+
+.intro_right {
+    grid-column: me1 / me2;
+    display: flex;
+    align-items: center;
+}
+.intro_left {
+    grid-column: me0 / me1;
+}
+.slogan {
+    font-size: 60px;
+    padding-right: 70px;
+    color: $black;
+    margin-top: 0px;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    z-index: 2;
+    animation: fade_in .3s ease 0s;
+}
+.summary {
+    padding-right: 70px;
+    line-height: 1.6;
+    display: flex;
+}
+.text {
+    width: 50%;
+    padding: 0 20px;
+    position: relative;
+    animation: fade_in .5s ease 0s;
+    &:last-child {
+        padding-right: 0px;
     }
-    &__slogan {
-        margin-left: $gap;
-        font-size: 48px;
+    &:first-child {
+        padding-left: 0px;
+    }
+}
+.resume {
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 420px;
+    position: absolute;
+    background-color: white;
+    padding: 20px 24px;
+    transform: translate(-24px);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px -1px;
+}
+
+.email {
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    a {
+        color: $black;
         font-weight: bold;
-        color: $black;
-        letter-spacing: -.020em;
-        line-height: 1.2;
-        width: 70%;
+        font-size: 16px;
+        text-decoration: none;
+        svg {
+            transform: translate(0px, 2px);
+            margin-left: 1px;
+        }
     }
-    &__box {
-        line-height: 1.6;
-        max-width: 920px;
-        margin-top: 20px;
-        margin-left: 140px;
-        margin-right: auto;
-        grid-column: me0 / m02;
-        padding: 30px 70px;
-        padding-left: 140px + $gap;
-        padding-bottom: 50px;
-        border: 1px solid #ebebeb;
-        border-radius: 8px;
-        background-color: $bg-color;
-        background:
-        linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-        linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-        $dot-color;
-        background-size: $dot-space $dot-space;
-        color: $black;
-        white-space: pre-line;
-        font-size: 15px;
-        a { color: $blue; }
+    padding-right: 20px;
+}
+.drive {
+    border-left: 1px solid #e0e0e0;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+.pict {
+    width: 340px;
+    position: relative;;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 340px;
+        background-color: black;
+        top: 0;
+        left: 0;
+        transform: translate(16px, -8px);
+    }
+    img {
+        position: absolute;
+        z-index: 2;
+        width: inherit;
+        transform: translate(0px, 8px);
     }
 }
 
@@ -71,77 +155,152 @@ $gap: 70px;
     padding: 10px 20px;
     border-radius: 5px;
     border: 0px;
-    background-color: $blue-font;
+    background-color: #03A678;
     color: white;
-    box-shadow: $blue 0px 1px 7px -1px ;
-    // margin-right: 8px;
-    // margin-top: 22px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    box-shadow: #03A678 0px 1px 7px -1px ;
 }
 
 @media( max-width : $media-medium ) {
-    $gap: 40px;
-
-    .me {
-        grid-template-columns: [me0] 200px [me1] 1fr [me2];
-        &__pict img {
-            height: 200px;
+    .svg {
+        transform: scale(1);
+    }
+    .slogan {
+        margin-top: 14px;
+        font-size: 48px;
+    }
+    .pict {
+        &::before {
+            transform: translate(0px, -8px);
         }
-        &__slogan {
-            margin-left: $gap;
-            width: 60%;
-            font-size: 32px;
-        }
-        &__box {
-            margin-top: 20px;
-            padding: 30px 50px;
-            max-width: 760px;
-            margin-left: 100px;
-            padding-left: 100px + $gap;
-            padding-bottom: 50px;
-            font-size: 14px;
+        img {
+            transform: translate(-16px, 8px);
         }
     }
+    .summary {
+        padding-right: 80px;
+    }
+
     .print {
         font-size: 14px;
+    }
+    .text {
+        padding: 16px;
+    }
+    .resume {
+        margin-top: 30px;
+    }
+}
+
+@media( max-width : $media-reg ) {
+    .grid {
+        grid-template-columns: [me0] 1fr [me1] 300px [me2];
+    }
+    .slogan {
+        font-size: 60px;
+        padding-right: 0px;
+        grid-column: me0 / me2;
+    }
+    .summary {
+        flex-direction: column;
+        padding-right: 50px;
+    }
+    .text {
+        padding: 0px;
+        width: 100%;
+    }
+    .resume {
+        margin-top: 10px;
+        width: 420px;
+        padding: 18px 20px;
+        transform: translate(0px);
+    }
+    .pict {
+        width: 300px;
+        &::before {
+            height: 300px;
+            transform: translate(0px, 0px);
+        }
+        img {
+            transform: translate(-16px, 16px);
+        }
+    }
+}
+
+@media( max-width : $media-mid ) {
+    .svg {
+        transform: scale(.7);
+    }
+    .background {
+        padding-top: 130px;
+        padding-bottom: 160px;
+    }
+    .grid {
+        grid-template-columns: [me0] 1fr [me1] 200px [me2];
+    }
+    .pict {
+        width: 200px;
+        &::before {
+            height: 200px;
+        }
     }
 }
 
 @media( max-width : $media-phone ) {
-    $dot-color: #00000046;
-    
-    .me {
-        margin-top: -10px;
-        margin-bottom: 40px;
-        &__pict {
-            div {
-                display: none;
-            }
-            img {
-                height: 70px;
-                border-radius: 50%;
-                grid-column: me0 / m02;
-                position: relative;
-                margin-bottom: 6px;
-            }
+    .background {
+        padding-top: 60px;
+        padding-bottom: 120px;
+    }
+    .svg {
+        display: none;
+    }
+    .slogan {
+        font-size: 38px;
+        text-shadow: -3px 3px #03A678;
+    }
+    .intro_right, .intro_left {
+        grid-column: me0 / me2;
+        position: relative;
+    }
+    .intro_right {
+        height: calc(100vw - 130px);
+    }
+    .pict {
+        position: absolute;
+        width: calc(100% + 40px);
+        transform: translate(-20px);
+        height: calc(100vw - 130px);
+        overflow: hidden;
+        &::before {
+            display: none;
         }
-        &__slogan {
-            grid-column: me0 / m02;
+        img {
             width: 100%;
-            line-height: 1.1;
-            margin: 2px 0;
-            font-size: 38px;
-            text-shadow: -3px 3px $blue;
+            transform: translate(0px, -35px);
         }
-        &__box {
-            padding-left: 30px;
-            margin-left: -30px;
-            padding-right: 20px;
-            background-color: $bg-color;
-            background:
-                linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-                linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-                $dot-color;
-            background-size: $dot-space $dot-space;
+    }
+    .summary {
+        padding-right: 0px;
+        padding-top: 30px;
+        p {
+            &:first-child {
+                margin-top: 0px;
+            }
         }
+    }
+    .resume {
+        padding: 10px 14px;
+        width: calc(100% + 16px);
+        transform: translate(-8px);
+    }
+    .email {
+        padding-right: 10px;
+        a {
+            font-size: 14px;
+        }
+    }
+    .drive {
+        padding-left: 14px;
     }
 }

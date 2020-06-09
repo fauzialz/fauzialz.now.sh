@@ -4,7 +4,7 @@ import Breadscrumb from '../breadcrumb'
 
 const UnderConstruction = ({ breadcrumb }: { breadcrumb?: boolean } ) => (
     <div className={styles.frame}>
-        <Center>
+        <Center withHeader>
             {breadcrumb && <Breadscrumb />}
             This page is under construction!
         </Center>

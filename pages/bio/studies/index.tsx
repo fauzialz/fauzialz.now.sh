@@ -16,7 +16,7 @@ const Studies = () => (
             <title>Formal Education Record - {summary.first_name} {summary.last_name}</title>
             <meta name="description" content="Record of Fauzi Al Aziz Fromal Education" />
         </Head>
-        <Center>
+        <Center withHeader>
             <Breadscrumb />  
         </Center>
         <TimelineHead title="FORMAL EDUCATION RECORD" >
