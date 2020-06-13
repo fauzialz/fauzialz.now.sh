@@ -10,7 +10,7 @@ $gap: 70px;
 
 @keyframes fade_in {
     from {
-        transform: translate(-30px);
+        transform: translate(-14px);
         opacity: 0;
     }
     to {
@@ -84,19 +84,22 @@ $gap: 70px;
     width: 50%;
     padding: 0 20px;
     position: relative;
-    animation: fade_in .5s ease 0s;
-    &:last-child {
-        padding-right: 0px;
-    }
+    animation: fade_in .3s ease-out;
+    animation-fill-mode: backwards;
     &:first-child {
         padding-left: 0px;
+        animation-delay: .05s;
+    }
+    &:last-child {
+        padding-right: 0px;
+        animation-delay: .1s;
     }
 }
 .resume {
     display: flex;
     border-radius: 10px;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 420px;
     position: absolute;
     background-color: white;
@@ -151,7 +154,8 @@ $gap: 70px;
 }
 
 .print {
-    font-size: 15px;
+    transition: all .4s ease;
+    font-size: 14px;
     padding: 10px 20px;
     border-radius: 5px;
     border: 0px;
@@ -160,6 +164,9 @@ $gap: 70px;
     font-weight: 500;
     letter-spacing: .02em;
     box-shadow: #03A678 0px 1px 7px -1px ;
+    &:hover {
+        background-color: #007554;
+    }
 }
 
 @media( max-width : $media-medium ) {
@@ -250,26 +257,24 @@ $gap: 70px;
 @media( max-width : $media-phone ) {
     .background {
         padding-top: 60px;
-        padding-bottom: 120px;
+        padding-bottom: 20px;
     }
     .svg {
         display: none;
     }
     .slogan {
-        font-size: 38px;
-        text-shadow: -3px 3px #03A678;
+        font-size: 48px;
+        font-weight: 800;
+        margin-top: 24px;
+        padding: 0 20px;
+        text-shadow: 4px 4px #cacaca;
     }
     .intro_right, .intro_left {
         grid-column: me0 / me2;
         position: relative;
     }
-    .intro_right {
-        height: calc(100vw - 130px);
-    }
     .pict {
-        position: absolute;
-        width: calc(100% + 40px);
-        transform: translate(-20px);
+        width: calc(100% + 10px);
         height: calc(100vw - 130px);
         overflow: hidden;
         &::before {
@@ -281,18 +286,21 @@ $gap: 70px;
         }
     }
     .summary {
-        padding-right: 0px;
+        padding-right: 0;
         padding-top: 30px;
         p {
+            margin: 16px 0px;
+            padding: 0 20px;
             &:first-child {
                 margin-top: 0px;
             }
         }
     }
     .resume {
-        padding: 10px 14px;
-        width: calc(100% + 16px);
-        transform: translate(-8px);
+        position: relative;
+        margin: 20px 10px;
+        padding: 18px 14px;
+        width: calc(100% - 20px);
     }
     .email {
         padding-right: 10px;

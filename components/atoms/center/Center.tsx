@@ -5,11 +5,13 @@ import cn from 'classnames'
 interface CenterProps {
     children : ReactNode
     withHeader ?: boolean
+    noPaddingPhone ?: boolean
 }
 
-const Center = ({children, withHeader}: CenterProps) => (
+const Center = ({children, withHeader, noPaddingPhone}: CenterProps) => (
     <div className={cn({
         [styles.center_padding] : withHeader,
+        [styles.no_padding] : noPaddingPhone,
         [styles.center] : !withHeader
     })}>
         {children}

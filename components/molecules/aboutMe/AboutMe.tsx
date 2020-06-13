@@ -35,7 +35,7 @@ const AboutMe = () => {
                         </defs>
                     </svg>
                 </div>
-                <Center>
+                <Center noPaddingPhone>
                     <div className={styles.grid}>
                         <h1 className={styles.slogan}>{summary.slogan}</h1>
                         
