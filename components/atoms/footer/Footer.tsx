@@ -3,11 +3,7 @@ import Center from '../center'
 import Link from 'next/link'
 import { summary, social } from '../../../content/profile'
 import Icon from '@mdi/react'
-import { mdiTwitter } from '@mdi/js';
-import { mdiInstagram } from '@mdi/js';
-import { mdiLinkedin } from '@mdi/js';
-import { mdiGitlab } from '@mdi/js';
-import { mdiCopyright } from '@mdi/js';
+import { mdiTwitter, mdiInstagram, mdiLinkedin, mdiGitlab, mdiCopyright, mdiContentCopy } from '@mdi/js';
 import ExternalLink from '../externalLink'
 
 const socialIcon = [
@@ -17,6 +13,14 @@ const socialIcon = [
 ]
 
 const now = new Date()
+
+const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Copied to clipboard')
+    }).catch(err => {
+        console.error(`Could not copy contact ${text}: `, err);
+    })
+} 
 
 const Footer = () => (
     <div className={styles.frame}>
@@ -34,13 +38,21 @@ const Footer = () => (
                         </a>
                     </Link>
                     <div className={styles.greating}>
-                        Thank you for read this far. Now, let's connect!<br /><br />
-                        Email: {summary.email} <br />
-                        Phone: {summary.phone}
+                        Oh! You come this far? Let's connect then!
+                    </div>
+                    <div className={styles.contact}>
+                        <div className={styles.copy} onClick={() => copyToClipboard(summary.email)}>
+                            {summary.email}
+                            <Icon path={mdiContentCopy} size={.65} />
+                        </div>
+                        <div className={styles.copy} onClick={() => copyToClipboard(summary.phone)}>
+                            {summary.phone}
+                            <Icon path={mdiContentCopy} size={.65} />
+                        </div>
                     </div>
                     <div className={styles.content}>
                         {social.map( (item, i) => (
-                            <a className={styles.social} href={item.link} target="blank" key={i}>
+                            <a className={styles.social} href={item.link} target="blank" key={i} aria-label={item.title}>
                                 <Icon path={socialIcon[i]} size={1} />
                             </a>
                         ))}
