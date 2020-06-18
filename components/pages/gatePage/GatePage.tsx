@@ -56,6 +56,7 @@ const GatePage = () => {
                 <title>{summary.alias}</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content={description} />
+                <meta name="google-site-verification" content="mE8yT1LBkeQBSKtmGhYnTmusJNvMGkMJbW97eRL7WMc" />
             </Head>
             <div className={styles.light}
                 style={{
