@@ -88,11 +88,11 @@ $gap: 70px;
     animation-fill-mode: backwards;
     &:first-child {
         padding-left: 0px;
-        animation-delay: .05s;
+        animation-delay: .1s;
     }
     &:last-child {
         padding-right: 0px;
-        animation-delay: .1s;
+        animation-delay: .2s;
     }
 }
 .resume {
@@ -105,7 +105,7 @@ $gap: 70px;
     background-color: white;
     padding: 20px 24px;
     transform: translate(-24px);
-    box-shadow: #00000020 0px 1px 6px 0px;
+    box-shadow: rgba(0, 0, 0, 0.200) 0px 2px 4px -1px;
 }
 
 .email {
@@ -163,7 +163,6 @@ $gap: 70px;
     color: white;
     font-weight: 500;
     letter-spacing: .02em;
-    box-shadow: #03A678 0px 1px 7px -1px ;
     &:hover {
         background-color: #007554;
     }
@@ -274,8 +273,10 @@ $gap: 70px;
         position: relative;
     }
     .pict {
-        width: calc(100% + 10px);
+        width: calc(100% - 20px);
         height: calc(100vw - 130px);
+        margin-left: 20px;
+        border-radius: 20px 0 0 20px;
         overflow: hidden;
         &::before {
             display: none;
@@ -287,20 +288,31 @@ $gap: 70px;
     }
     .summary {
         padding-right: 0;
-        padding-top: 30px;
+        padding-top: 26px;
+        width: calc(100% - 20px);
+        border: 1px solid #e0e0e0;
+        border-radius: 0 0 20px 0;
+        border-left: 0px;
+        border-top: 0px;
         p {
             margin: 16px 0px;
             padding: 0 20px;
+            font-size: 13px;
             &:first-child {
                 margin-top: 0px;
+            }
+            b {
+                font-size: 18px;
             }
         }
     }
     .resume {
         position: relative;
-        margin: 20px 10px;
+        margin: 28px 12px;
+        margin-bottom: 18px;
         padding: 18px 14px;
-        width: calc(100% - 20px);
+        padding-right: 20px;
+        width: calc(100% - 2px);
     }
     .email {
         padding-right: 10px;

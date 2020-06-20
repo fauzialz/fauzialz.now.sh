@@ -34,7 +34,7 @@
     letter-spacing: .1px;
 }
 .contact {
-    padding: 3px 16px;
+    padding: 3px 14px;
     background-color: $black;
     border-radius: 10px;
     margin-top: 24px;
@@ -53,6 +53,15 @@
     background-color: transparent;
     border: 0px;
     letter-spacing: .1px;
+    svg {
+        transition: all .2s ease;
+        visibility: hidden;
+        opacity: 0;
+    }
+    &:hover svg {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 .content {
     margin-top: 24px;
