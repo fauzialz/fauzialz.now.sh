@@ -1,16 +1,31 @@
 @import '../../../style/color';
 @import '../../../style/sizing';
 
+@keyframes fade_in {
+    from {
+        transform: translate(-14px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
 .base {
     background-color: #eeeeee;
     padding-top: 70px;
-    padding-bottom: 150px;
+    padding-bottom: 120px;
     color: $black;
 }
 .center {
     display: grid;
     grid-template-columns: [c0] 1fr [c1] 1fr [c2];
     column-gap: 20px;
+}
+.card, .title {
+    animation: fade_in .3s ease 0s;
+    animation-fill-mode: backwards;
 }
 .card {
     max-width: 400px;
@@ -21,7 +36,7 @@
 }
 .title {
     font-size: 46px;
-    grid-column: c0 / c2;
+    margin: 0;
 }
 .detail {
     margin-bottom: 20px;
@@ -33,6 +48,8 @@
     width: calc(100% - 20px);
     background-color: #e2e2e2;
     border-radius: 20px;
+    animation: fade_in .3s ease .1s;
+    animation-fill-mode: backwards;
 }
 .line {
     margin-top: 20px;
@@ -41,12 +58,16 @@
     border-top: 1px solid $line2;
 }
 .dummy {
+    animation: fade_in .3s ease .2s;
+    animation-fill-mode: backwards;
     width: 20px;
     border-radius: 0 16px 0 20px;
     height: calc(100% - 40px);
     background-color: white;
 }
 .cards {
+    animation: fade_in .3s ease .2s;
+    animation-fill-mode: backwards;
     position: absolute;
     top: 40px;
     left: 20px;
@@ -73,7 +94,7 @@
     .title {
         font-size: 36px;
     }
-    .card, .socket {
+    .title, .card, .socket {
         grid-column: c0 / c2;
     }
     .socket {
@@ -84,10 +105,8 @@
 
 @media( max-width : $media-phone ) {
     .base {
-        padding-top: 30px;
+        padding-top: 80px;
         padding-bottom: 0px;
-        background: #F7F8F8;
-        background: linear-gradient(180deg, #F7F8F8 0%, #eeeeee 100%);
     }
     .title, .card, .socket {
         padding: 0 20px;
