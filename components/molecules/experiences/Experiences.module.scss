@@ -1,8 +1,91 @@
 @import '../../../style/color';
 @import '../../../style/sizing';
 
-@media( max-width : $media-phone + 160px ) {
-    .feeds {
+.base {
+    background-color: #F7F8F8;
+    padding: 80px 0;
+    padding-bottom: 160px;
+    color: $black;
+}
+.center {
+    display: grid;
+    grid-template-columns: [c0] 1fr [c1] 1fr [c2];
+    column-gap: 20px;
+}
+.card {
+    max-width: 400px;
+    grid-column: c0 / c1;
+    a {
+        color: $blue;
+    }
+}
+.title {
+    font-size: 44px;
+    grid-column: c0 / c2;
+}
+.detail {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.socket {
+    margin-top: 15px;
+    width: calc(100% - 0px);
+    background-color: #eeeeee;
+    border-radius: 20px;
+}
+.cards {
+    position: relative;
+    width: calc(100% - 40px);
+    transform: translate(20px, 30px);
+}
+.line {
+    height: 100%;
+    position: absolute;
+    width: 32px;
+    border-right: 1px solid $line;
+    transform: translateY(-30px);
+}
+
+@media( max-width : $media-medium ) {
+    .title {
+        font-size: 42px;
+    }
+}
+
+@media( max-width : $media-reg ) {
+    .center {
+        grid-template-columns: [c0] calc(100% / 2 - 70px) [c1] 1fr [c2];
+    }
+}
+
+@media( max-width : $media-mid ) {
+    .title {
+        font-size: 36px;
+    }
+    .card, .socket {
+        grid-column: c0 / c2;
+    }
+    .socket {
+        margin-top: 30px;
+    }
+}
+
+@media( max-width : $media-phone ) {
+    .base {
+        padding-top: 90px; 
+    }
+    .title, .card, .socket {
         padding: 0 20px;
+    }
+    .socket {
+        padding: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    .cards {
+        transform: translate(20px, 20px);
+    }
+    .line {
+        transform: translateY(-20px);
     }
 }

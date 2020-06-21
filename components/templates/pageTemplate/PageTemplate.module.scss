@@ -4,12 +4,5 @@
     &__wrapper {
         padding-top: 1px;
         margin-top: -1px;
-        padding-bottom: 40px;
-    }
-}
-
-@media( max-width : $media-phone ) {
-    .template__wrapper { 
-        padding-bottom: 20px;
     }
 }

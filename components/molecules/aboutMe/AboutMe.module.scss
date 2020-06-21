@@ -105,7 +105,7 @@ $gap: 70px;
     background-color: white;
     padding: 20px 24px;
     transform: translate(-24px);
-    box-shadow: rgba(0, 0, 0, 0.200) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.070) 0px 2px 4px -1px;
 }
 
 .email {
@@ -256,7 +256,7 @@ $gap: 70px;
 @media( max-width : $media-phone ) {
     .background {
         padding-top: 60px;
-        padding-bottom: 20px;
+        padding-bottom: 0px;
     }
     .svg {
         display: none;
@@ -288,8 +288,8 @@ $gap: 70px;
     }
     .summary {
         padding-right: 0;
-        padding-top: 26px;
-        width: calc(100% - 20px);
+        padding-top: 30px;
+        width: calc(100% - 30px);
         border: 1px solid #e0e0e0;
         border-radius: 0 0 20px 0;
         border-left: 0px;
@@ -297,7 +297,6 @@ $gap: 70px;
         p {
             margin: 16px 0px;
             padding: 0 20px;
-            font-size: 13px;
             &:first-child {
                 margin-top: 0px;
             }
@@ -308,9 +307,9 @@ $gap: 70px;
     }
     .resume {
         position: relative;
-        margin: 28px 12px;
+        margin: 28px 20px;
         margin-bottom: 18px;
-        padding: 18px 14px;
+        padding: 16px 12px;
         padding-right: 20px;
         width: calc(100% - 2px);
     }

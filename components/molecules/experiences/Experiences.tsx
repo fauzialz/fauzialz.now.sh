@@ -4,26 +4,30 @@ import { sortedExp } from '../../../content/profile'
 import JobCard from '../../atoms/jobCard'
 import { subMenu } from '../../../content/router'
 import Center from '../../atoms/center'
+import InternalLink from '../../atoms/internalLink'
 
 const expDetail = 'In case you want to see my formal work experience record, the simplified list are shown.'
 
 const Experiences = () => (
-    <Center>
-        <section id="experiences">
-            <BioSection
-                title="Formal Work Experiences"
-                detail={expDetail}
-                seeDetail="See full work experiences"
-                seeDetailHref={subMenu.exp.href}
-            >
-                <div className={styles.feeds}>
-                    {sortedExp.map(exp => (
-                        <JobCard key={exp.name} job={exp} />
-                    ))}
+    <section id="experiences" className={styles.base}>
+        <Center noPaddingPhone>
+            <div className={styles.center}>
+                <h1 className={styles.title}>Formal Work Experiences</h1>
+                <div className={styles.card}>
+                    <p className={styles.detail}>{expDetail}</p>
+                    <InternalLink href={subMenu.edu.href}>See full study record</InternalLink>
                 </div>
-            </BioSection>
-        </section>
-    </Center>
+                <div className={styles.socket}>
+                    <div className={styles.cards}>
+                        <div className={styles.line} />
+                        {sortedExp.map(exp => (
+                            <JobCard key={exp.name} job={exp} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </Center>
+    </section>
 )
 
 export default Experiences
