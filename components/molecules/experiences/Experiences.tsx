@@ -15,7 +15,7 @@ const Experiences = () => (
                 <h1 className={styles.title}>Formal Work Experiences</h1>
                 <div className={styles.card}>
                     <p className={styles.detail}>{expDetail}</p>
-                    <InternalLink href={subMenu.edu.href}>See full study record</InternalLink>
+                    <InternalLink href={subMenu.exp.href}>See full study record</InternalLink>
                 </div>
                 <div className={styles.socket}>
                     <div className={styles.cards}>
