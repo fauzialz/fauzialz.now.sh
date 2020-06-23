@@ -39,48 +39,55 @@ const TechStack = ({tech_stack}: {tech_stack: string[]}) => (
 
 const Experiences = () => (
     <PageTemplate>
-        <Head>
-            <title>Formal Work Experience Record - {summary.first_name} {summary.last_name}</title>
-            <meta name="description" content="Record of Fauzi Al Aziz Fromal Work Experience" />
-        </Head>
-        <Center withHeader>
-            <Breadscrumb />
-        </Center>
-        <TimelineHead title="FORMAL WORK RECORD" >
-            <div className="summary">
-                {workSummary}
+        <div className="base">
+            <Head>
+                <title>Formal Work Experience Record - {summary.first_name} {summary.last_name}</title>
+                <meta name="description" content="Record of Fauzi Al Aziz Fromal Work Experience" />
+            </Head>
+            <Center withHeader>
+                <div className="breadscrumb">
+                    <Breadscrumb />
+                </div>
+            </Center>
+            <TimelineHead title="Formal Work Record" >
+                <div className="summary">
+                    {workSummary}
+                </div>
+            </TimelineHead>
+            <div className="list">
+                {sortedExp.map( exp => (
+                    <TimeCard
+                        key={exp.name}
+                        start={exp.start}
+                        end={exp.end}
+                        title={exp.name}
+                        subTitle={exp.as}
+                        link={subMenu.exp.href + '/' + exp.id}
+                    >
+                        <div className="content">
+                            {exp.description}
+                            {exp.jobDesc &&
+                                <ul className="jobdesk">
+                                    {exp.jobDesc.map( job => (
+                                        <li key={job.title}>
+                                            <div className="title">{job.title}</div>
+                                            <div className="desc">{job.description}</div>
+                                            {job.tech_stack && <TechStack tech_stack={job.tech_stack} />}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
+                            {exp.tech_stack && <TechStack tech_stack={exp.tech_stack} />}
+                        </div>
+                    </TimeCard>
+                ))}
             </div>
-        </TimelineHead>
-        <div className="list">
-            {sortedExp.map( exp => (
-                <TimeCard
-                    key={exp.name}
-                    start={exp.start}
-                    end={exp.end}
-                    title={exp.name}
-                    subTitle={exp.as}
-                    link={subMenu.exp.href + '/' + exp.id}
-                >
-                    <div className="content">
-                        {exp.description}
-                        {exp.jobDesc &&
-                            <ul className="jobdesk">
-                                {exp.jobDesc.map( job => (
-                                    <li key={job.title}>
-                                        <div className="title">{job.title}</div>
-                                        <div className="desc">{job.description}</div>
-                                        {job.tech_stack && <TechStack tech_stack={job.tech_stack} />}
-                                    </li>
-                                ))}
-                            </ul>
-                        }
-                        {exp.tech_stack && <TechStack tech_stack={exp.tech_stack} />}
-                    </div>
-                </TimeCard>
-            ))}
         </div>
 
         <style jsx>{`
+            .base {
+                background-color: #F7F8F8;
+            }
             .summary {
                 font-weight: 400;
                 margin-top: 10px;
@@ -90,7 +97,8 @@ const Experiences = () => (
                 line-height: 1.6;
             }
             .list {
-                margin-bottom: 60px;
+                padding-bottom: 60px;
+                margin-top: 60px;
             }
             .content {
                 line-height: 1.5;
@@ -135,6 +143,12 @@ const Experiences = () => (
                 li {
                     // width: 100%;
                     margin-left: 0px;
+                }
+                .list {
+                    margin-top: 30px;
+                }
+                .breadscrumb {
+                    margin-top: 20px;
                 }
             }
         `}</style>

@@ -15,7 +15,6 @@ const TimelineHead = ({title, children}: TimelineHeadProps) => (
             </h1>
             {children}
         </Center>
-        <div className={styles.line} />
     </Fragment>
 )
 

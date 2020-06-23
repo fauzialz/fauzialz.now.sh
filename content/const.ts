@@ -8,7 +8,10 @@ export const isVowel = (letter: string) => vowel.includes(letter)
 
 export const firstIsVowel = (word: string) => isVowel(word.substr(0,1).toLocaleLowerCase())
 
-export const printDate = (date: Date) => `${monthNames[date.getMonth()].substr(0,3)} ${date.getFullYear()}`
+export const printMonth = (date: Date, full?: boolean) => `${monthNames[date.getMonth()].substr(0, full? monthNames[date.getMonth()].length : 3)}`
+
+export const printDate = (date: Date) => `${printMonth(date)} ${date.getFullYear()}`
+
 export const printInterval = (date: Date) => {
     let now = new Date()
     let gap = (now.getTime() - date.getTime()) / 1000 / 60 / 60

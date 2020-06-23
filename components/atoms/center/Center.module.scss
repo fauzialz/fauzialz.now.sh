@@ -19,8 +19,12 @@
 }
 
 @media( max-width : $media-mid ) {
-    .center, .center_padding {
+    .center {
         padding: 0 $max-padding-mid;
+    }
+    .center_padding {
+        padding: 0 $max-padding-mid;
+        padding-top: $header_height + 40px;
     }
 }
 
