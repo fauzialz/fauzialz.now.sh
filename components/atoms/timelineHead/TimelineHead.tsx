@@ -10,10 +10,12 @@ interface TimelineHeadProps {
 const TimelineHead = ({title, children}: TimelineHeadProps) => (
     <Fragment>
         <Center>
-            <h1 className={styles.title}>
-                {title}
-            </h1>
-            {children}
+            <div className={styles.base}>
+                <h1 className={styles.title}>
+                    {title}
+                </h1>
+                {children}
+            </div>
         </Center>
     </Fragment>
 )

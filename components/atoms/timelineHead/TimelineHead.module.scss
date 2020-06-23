@@ -1,5 +1,21 @@
 @import '../../../style/color';
 
+@keyframes fade_in {
+    from {
+        transform: translate(-14px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
+.base {
+    animation: fade_in .3s ease;
+    animation-fill-mode: backwards;
+}
+
 .title {
     font-size: 44px;
     color: $black;

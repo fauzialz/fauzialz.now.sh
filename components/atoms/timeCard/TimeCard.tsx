@@ -19,10 +19,12 @@ interface TimeCardProps {
 
 const Date = (props: TimeCardProps) => (
     <div className={styles.date}>
-        <div className={styles.start}>
-            <span>{printMonth(props.start)}</span> {props.start.getFullYear()}
+        <div className={styles.flex}>
+            <div className={styles.start}>
+                <span>{printMonth(props.start)}</span> {props.start.getFullYear()}
+            </div>
+            <div className={styles.until}>–</div>
         </div>
-        <div className={styles.until}>-</div>
         <div className={styles.end}>
             {props.end?
                 <Fragment><span>{printMonth(props.end)}</span> {props.end.getFullYear()}</Fragment>:

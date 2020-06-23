@@ -105,7 +105,7 @@ $gap: 70px;
     background-color: white;
     padding: 20px 24px;
     transform: translate(-24px);
-    box-shadow: rgba(0, 0, 0, 0.070) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.100) 0px 4px 6px 0px;
 }
 
 .email {
@@ -127,8 +127,6 @@ $gap: 70px;
 .drive {
     border-left: 1px solid #e0e0e0;
     padding-left: 20px;
-    display: flex;
-    align-items: center;
 }
 
 
@@ -157,11 +155,12 @@ $gap: 70px;
     transition: all .4s ease;
     font-size: 14px;
     padding: 10px 20px;
-    border-radius: 5px;
+    height: 100%;
+    border-radius: 8px;
     border: 0px;
     background-color: #03A678;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: .02em;
     &:hover {
         background-color: #007554;

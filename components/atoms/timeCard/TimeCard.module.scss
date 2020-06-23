@@ -1,6 +1,17 @@
 @import '../../../style/color';
 @import '../../../style/sizing';
 
+@keyframes fade_in {
+    from {
+        transform: translate(-14px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
 .frame {
     width: 100%;
 }
@@ -8,8 +19,9 @@
 .base {
     display: grid;
     grid-template-columns: [t0] 180px [t1] 1fr [t2];
-    column-gap: 20px;
-    margin-bottom: 30px;
+    column-gap: 16px;
+    margin-bottom: 20px;
+    
 }
 
 .wrapper {
@@ -22,7 +34,8 @@
 
 .time {
     padding-bottom: 20px;
-    color: $black;
+    color: $black; animation: fade_in .3s ease;
+    animation-fill-mode: backwards;
 }
 
 .date {
@@ -38,7 +51,15 @@
         font-weight: 400;
     }
 }
-.until, .card_time {
+.flex {
+    display: flex;
+    align-items: center;
+}
+.until {
+    margin-left: 6px;
+    color: $line;
+}
+.card_time {
     display: none;
 }
 .end {
@@ -58,8 +79,22 @@
     padding-top: 0;
     background-color: white;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.080) 0px 1px 4px 0px;
+    animation: fade_in .3s ease;
+    animation-fill-mode: backwards;
+    box-shadow: rgba(0, 0, 0, 0.070) 0px 2px 4px -1px;
 }
+
+@for $i from 1 to 21 {
+    .frame:nth-child(#{$i}) {
+        .time {
+            animation-delay: $i * 0.1s;
+        }
+        .card {
+            animation-delay: ($i + 1) * 0.1s;
+        }
+    }
+}
+
 .head {
     padding-top: 20px;
     background-color: white;
@@ -163,6 +198,7 @@
         padding: 0;
         padding-bottom: 8px;
         display: flex;
+        align-items: center;
         top: 0;
     }
     .head {
@@ -186,8 +222,5 @@
         span {
             font-size: 12px;
         }
-    }
-    .base {
-        margin-bottom: 20px;
     }
 }
