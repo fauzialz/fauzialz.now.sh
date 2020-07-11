@@ -15,18 +15,19 @@ export const firebaseConfig = {
 };
 
 export const firebaseEvent = {
-    RESUME: 'print_resume'
+    screen_view: 'screen_view',
+    view_item: 'view_item'
 }
 
 export const initFirebase = () => {
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
-        console.log(firebase.apps)
+        firebase.analytics()
     }
-    firebase.analytics()
+    // return firebase
 }
 
-export const useLogEvent = (event: string) => firebase.analytics().logEvent(event)
+export const useLogEvent = (event: string, eventParams?: { [key: string]: any }) => firebase.analytics().logEvent(event, eventParams)
 
 export const PageLogEvent = ({children} : {children: ReactNode}) => {
     let route = useRouter()
@@ -34,8 +35,9 @@ export const PageLogEvent = ({children} : {children: ReactNode}) => {
     let pageName = pages[pages.length - 1]? pages[pages.length - 1] : 'home'
     
     useEffect(() => {
-        initFirebase()
-        firebase.analytics().logEvent(`visit_${pageName}`)
+        setTimeout(() => {
+            firebase.analytics().logEvent(firebaseEvent.screen_view, { screen_name : pageName})
+        }, 100);
     }, [])
 
     return (

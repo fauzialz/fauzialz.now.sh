@@ -86,7 +86,7 @@ const AboutMe = () => {
                                         </div>
                                         {/* <div className={styles.divider}></div> */}
                                         <div className={styles.drive}>
-                                            <a href={resumeLink} target="blank"><button className={styles.print} onClick={() => useLogEvent(firebaseEvent.RESUME)}>
+                                            <a href={resumeLink} target="blank"><button className={styles.print} onClick={() => useLogEvent(firebaseEvent.view_item, {items: 'resume'})}>
                                                 Print Resume
                                             </button></a>
                                         </div>

@@ -5,5 +5,10 @@ import { firebaseConfig, initFirebase } from '../content/firebase'
 import { useEffect } from 'react'
 
 export default function MyApp({ Component, pageProps }) {
+
+    useEffect(() => {
+        initFirebase()
+    }, [])
+
     return <Component {...pageProps} />
 }
