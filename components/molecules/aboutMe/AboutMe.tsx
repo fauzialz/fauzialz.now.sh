@@ -6,6 +6,7 @@ import { Fragment, useState } from 'react'
 import Center from '../../atoms/center'
 import Icon from '@mdi/react'
 import { mdiOpenInNew } from '@mdi/js'
+import { useLogEvent, firebaseEvent } from '../../../content/firebase'
 
 const currentJob = sortedExp[0]
 const anOrA = (word: string) => firstIsVowel(word)? 'an' : 'a'
@@ -85,7 +86,7 @@ const AboutMe = () => {
                                         </div>
                                         {/* <div className={styles.divider}></div> */}
                                         <div className={styles.drive}>
-                                            <a href={resumeLink} target="blank"><button className={styles.print}>
+                                            <a href={resumeLink} target="blank"><button className={styles.print} onClick={() => useLogEvent(firebaseEvent.RESUME)}>
                                                 Print Resume
                                             </button></a>
                                         </div>

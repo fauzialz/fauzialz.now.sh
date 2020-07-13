@@ -2,6 +2,7 @@ import style from './PageTemplate.module.scss'
 import Header from '../../molecules/header'
 import { ReactNode, useEffect, useState } from 'react'
 import Footer from '../../atoms/footer'
+import { PageLogEvent } from '../../../content/firebase'
 
 export interface PageTemplateProps {
     children: ReactNode
@@ -25,13 +26,15 @@ const PageTemplate = ({children}: PageTemplateProps) => {
     }
 
     return (
-        <div className={style.template}>
-            <Header position={position} />
-            <div id='content' className={style.template__wrapper}>
-                {children}
+        <PageLogEvent>
+            <div className={style.template}>
+                <Header position={position} />
+                <div id='content' className={style.template__wrapper}>
+                    {children}
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </PageLogEvent>
     )
 }
 
