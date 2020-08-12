@@ -22,9 +22,8 @@ export const firebaseEvent = {
 export const initFirebase = () => {
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
-        firebase.analytics()
     }
-    // return firebase
+    firebase.analytics()
 }
 
 export const useLogEvent = (event: string, eventParams?: { [key: string]: any }) => firebase.analytics().logEvent(event, eventParams)

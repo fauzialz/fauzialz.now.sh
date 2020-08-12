@@ -21,6 +21,7 @@ $gap: 70px;
 
 .frame {
     background-color: white;
+    overflow: hidden;
 }
 
 .background {
@@ -131,23 +132,28 @@ $gap: 70px;
 
 
 .pict {
-    width: 340px;
-    position: relative;;
+    width: 200px;
+    position: relative;
     &::before {
         content: '';
         position: absolute;
-        width: 100%;
-        height: 340px;
+        width: 800px;
+        height: 600px;
         background-color: $black;
         top: 0;
         left: 0;
-        transform: translate(16px, -8px);
+        border-radius: 50px;
+        background: #F7F8F8;
+        box-shadow:  -20px 20px 60px #d2d3d3, 
+                     20px -20px 60px #ffffff;
+        transform-origin: left top;
+        transform: rotate(-45deg) translate(-20px, -60px);
     }
     img {
         position: absolute;
         z-index: 2;
         width: inherit;
-        transform: translate(0px, 8px);
+        border-radius: 50%;
     }
 }
 
@@ -158,12 +164,12 @@ $gap: 70px;
     height: 100%;
     border-radius: 8px;
     border: 0px;
-    background-color: #03A678;
+    background-color: #15202B;
     color: white;
     font-weight: 600;
     letter-spacing: .02em;
     &:hover {
-        background-color: #007554;
+        background-color: #943db9;
     }
 }
 
@@ -177,10 +183,8 @@ $gap: 70px;
     }
     .pict {
         &::before {
-            transform: translate(0px, -8px);
-        }
-        img {
-            transform: translate(-16px, 8px);
+            width: 700px;
+            height: 500px;
         }
     }
     .summary {
@@ -221,14 +225,11 @@ $gap: 70px;
         padding: 18px 20px;
         transform: translate(0px);
     }
+    
     .pict {
-        width: 300px;
         &::before {
-            height: 300px;
-            transform: translate(0px, 0px);
-        }
-        img {
-            transform: translate(-16px, 16px);
+            height: 700px;
+            transform: rotate(-45deg) translate(-20px, -300px);
         }
     }
 }
@@ -245,14 +246,17 @@ $gap: 70px;
         grid-template-columns: [me0] 1fr [me1] 200px [me2];
     }
     .pict {
-        width: 200px;
         &::before {
-            height: 200px;
+            height: 560px;
+            transform: rotate(-45deg) translate(-180px, -400px);
         }
     }
 }
 
 @media( max-width : $media-phone ) {
+    .frame {
+        overflow: visible;
+    }
     .background {
         padding-top: 60px;
         padding-bottom: 50px;
@@ -282,6 +286,7 @@ $gap: 70px;
         }
         img {
             width: 100%;
+            border-radius: 0;
             transform: translate(0px, -35px);
         }
     }

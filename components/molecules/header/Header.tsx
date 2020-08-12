@@ -6,6 +6,7 @@ import { summary } from '../../../content/profile'
 import HeaderPhone from '../headerPhone'
 import { useEffect, useState, ReactNode } from 'react'
 import Center from '../../atoms/center'
+import cn from 'classnames'
 
 const NavDrop = ({position, children}: { position: number, children: ReactNode}) => {
     let [boundary, setBoundary] = useState(60)
@@ -85,16 +86,16 @@ const Header = (props: {position: number}) => (
                     <div className={styles.header__menu}>
                         {mainMenu.map(item => (
                             <NavLink
-                            key={item.href}
-                            href={item.href}
-                            className={styles.menu}
-                            activeClass={styles.menu_active}
-                        >
-                            <span data-content={item.title}>
-                                {item.title}
-                            </span>
-                            <div><div /></div>
-                        </NavLink>
+                                key={item.href}
+                                href={item.href}
+                                className={cn(styles.menu, styles.menuBig)}
+                                activeClass={styles.menu_active}
+                            >
+                                <span data-content={item.title}>
+                                    {item.title}
+                                </span>
+                                <div><div /></div>
+                            </NavLink>
                         ))}
                     </div>
                 </div>

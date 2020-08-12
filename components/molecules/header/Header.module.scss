@@ -69,7 +69,7 @@ $height : $header_height;
             height: 100%;
             background: $black;
             transform:  translateX(calc(-100% - 1px));
-            transition: all .5s ease;
+            transition: all .7s ease;
         }
         &:after {
             position: absolute;
@@ -83,7 +83,7 @@ $height : $header_height;
             color: white;
             white-space: nowrap;
             overflow: hidden;
-            transition: width .5s ease;
+            transition: width .7s ease;
             align-items: center;
             display: flex;
         }
@@ -97,6 +97,9 @@ $height : $header_height;
         width: calc(100%);
     }
     div {display: none;}
+}
+.menuBig {
+    font-size: 18px;
 }
 .menu_active {
     div {

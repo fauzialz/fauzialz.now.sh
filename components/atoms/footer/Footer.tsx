@@ -57,7 +57,7 @@ const Footer = () => (
                             </a>
                         ))}
                         {summary.git && 
-                            <a className={styles.social} href={summary.git} target="blank">
+                            <a className={styles.social} href={summary.git} target="blank" aria-label="gitlab">
                                 <Icon path={mdiGitlab} size={1} />
                             </a>
                         }
