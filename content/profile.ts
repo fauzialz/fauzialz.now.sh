@@ -138,6 +138,7 @@ export const experience: Experience[] = [
         name: 'PT Xsis Mitra Utama',
         as: 'Software Engineer',
         start: new Date(2018, 8),
+        end: new Date(2020, 10),
         important: true,
         type: 'period',
         location: 'Jakarta',
@@ -149,6 +150,7 @@ export const experience: Experience[] = [
         name: 'Mapan - PT RUMA',
         as: 'Application Support Engineer',
         start: new Date(2018, 11),
+        end: new Date(2020, 10),
         important: true,
         type: 'period',
         location: 'Jakarta',
@@ -192,7 +194,18 @@ export const experience: Experience[] = [
                 Inner_link: '/portofolio/wobi'
             }
         ]
-    }
+    },
+    {
+        id: 'komodo',
+        name: 'Komodo eProcurement',
+        as: 'Frontend Engineer',
+        start: new Date(2020, 10),
+        important: true,
+        type: 'period',
+        location: 'Jakarta',
+        tech_stack: ['React', 'TypeScript', 'JavaScript'],
+        description: 'Komodo helps you make faster and more efficient procurement decisions. Our platform is built to solve the problem of manual procurement.'
+    },
 ]
 
 let exp = [...experience]
