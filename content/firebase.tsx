@@ -1,4 +1,4 @@
-import * as firebase from 'firebase/app'
+import firebase from 'firebase/app'
 import 'firebase/analytics';
 import { useRouter } from 'next/router';
 import { useEffect, ReactNode, Fragment } from 'react';
